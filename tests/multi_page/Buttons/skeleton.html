@@ -1,0 +1,28 @@
+<!-- 
+	Michael Wilson
+	HTML file
+	This file is a common skeletal page to be used by other files
+ -->
+<!DOCTYPE html>
+<head>
+	<!-- This include allows for the use of jquery in my JS -->
+	<script
+	  src="https://code.jquery.com/jquery-3.1.1.js"
+	  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+	  crossorigin="anonymous"></script>
+
+	<!-- Link to my javavscript -->
+	<script type="text/javascript" src="skeletal.js"></script>  
+
+	<title>Testing for multiple pages</title>
+</head>
+<body>
+	<h1>This header should be on each html page</h1>
+	<div id="page-changer">		
+		<button class="external-page" value="one">First Page</button>
+		<button class="external-page" value="two">Second Page</button>
+	</div>	
+	<!-- content from the other HTML files should go here -->
+	<div id="view"></div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+/*
+ * Michael Wilson
+ * My CSS file */
+
+.block {
+	text-align: center;
+	width: 100px;
+	height: 100px;
+	background-color: #666;
+	color: white;
+	padding:auto;
+	margin: auto;
+	font-family: monospace;
+
+	/* This allows for the centering of the content */
+	line-height: 100px;
+}
+
+.block:hover {
+	opacity: 0.6;
+	cursor: pointer;
+}

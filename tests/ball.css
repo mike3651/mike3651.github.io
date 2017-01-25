@@ -1,0 +1,33 @@
+/*
+ * Michael Wilson
+ * css file */
+
+body {
+	padding: auto;
+	margin: auto;
+	font-family: monospace;
+}
+
+
+#ball-area {
+	height: 500px;
+	width: 500px;
+	background-color: #666;
+	position: relative;
+}
+
+#ball {
+	background-color: red;
+	height: 20px;
+	width: 20px;
+	border-radius: 50%;
+	position: absolute;
+}
+
+/* Styling for a player */
+#player {
+	height: 20px;
+	width: 100px;
+	position: absolute;
+	background-color: blue;
+}

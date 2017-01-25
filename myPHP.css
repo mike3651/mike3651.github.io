@@ -1,0 +1,250 @@
+/*
+ * Michael Wilson
+ * 
+ * My personal styling sheet 
+ *
+ * Special thanks to LevelUpTuts for helping me out with some sweet CSS3 animations
+ */
+
+body {	
+	font-family: monospace;	
+	color: #666;
+	font-size: 20px;
+}
+
+body, .btn, .reveal-top, .reveal-top-games, .reveal-content {
+	/* Does a tannish sort of color */
+	background-color: #fcdecc;
+}
+ 
+h1, .container, .card {
+	text-align: center;
+	vertical-align: middle;
+}
+
+div {
+	height: 100%;
+}
+
+.at-end {
+	float: right;
+}
+
+table, tr, td {
+	border: 1px solid black;	
+}
+
+/* adding box shadow to the elements inside the table */
+tr, td { 
+	box-shadow: 1px 2px;
+}
+
+table {
+	padding: 1px 1px 1px 1px;
+	box-shadow: 1px 3px;
+}
+
+a {	
+	color: red;
+}
+
+a:hover {
+	cursor: pointer;
+}
+
+/* Styling for the rain */
+.rain-drop {
+	width: 0.5px;
+	height: 7px;
+	background-color: blue;
+	position: absolute;
+}
+
+nav {
+	width: 100%;
+	position: fixed;
+	top:0;
+	z-index: 1;
+	background-color: #666;
+}
+
+/* styling for the active item on the navigation bar */
+nav ul li:hover{
+	background-color: lightgreen;	
+}
+
+nav ul li{	
+	float: left;
+	margin: 2px 2px 2px 2px;
+}
+
+nav ul li a {
+	padding: 10px 10px;
+	color: white;
+	text-decoration: none;
+}
+
+/* Styling for the list elements in the navigation */
+nav ul {
+	list-style-type: none;	
+	text-align: center;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+}
+
+.reveal-wrapper {
+	border:solid 1px #333;	
+	position: relative;
+	overflow: hidden;	
+}
+
+.mtg:hover .reveal-top {
+	left: -100%;
+}
+
+.mus:hover .reveal-top {
+	left: 100%;
+}
+
+.games:hover .reveal-top-games {
+	top: -100%;
+}
+
+.reveal-content {
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, 3) inset;
+	padding: 100px;
+	color: #000;
+}
+
+.reveal-top, .reveal-top-games {	
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/** styling for revealing the top */
+.reveal-top {
+	background-color: red;
+	transition: left 0.4s ease;
+}
+
+.reveal-top-games {
+	transition: top 0.4s ease;
+}
+
+.btn {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;	
+}
+
+.btn a {
+	width: 100%;
+	display: block;
+	text-decoration: none;
+	height: 100%;
+	line-height: 100px;
+	text-transform: uppercase;
+	font-size: 15px;	
+}
+
+.btn .bg {
+	/* fills up the entire content area of button */
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.btn .bg, .back img, .reveal-top, .reveal-top-games{
+	width: 100%;
+	height: 100%;
+}
+
+.reveal-top, .btn:hover, .front, .back {
+	/* turqois color */
+	background-color: #666;
+	color: white;
+}
+
+.btn:hover .bg {
+	outline: #666 solid 2px;
+
+	/* Add the animation */
+	animation: pulse 1.5s infinite;
+}
+
+/*.btn a, .card-container{
+	color: white;
+}*/
+
+/* Gives a 3d appearance with a card */
+.card-container {
+	perspective: 700px;
+}
+
+.card {
+	position: relative;
+	margin: 20px;
+	line-height: 200px;	
+	transition: all 0.6s ease;	
+	transform-style: preserve-3d;
+}
+
+.card, .front, .back {
+	height: 200px;
+	width: 200px
+}
+
+.front, .back {	
+	top: 0;
+	left: 0;
+	position: absolute;
+	backface-visibility: hidden;
+}
+
+.back, .card:hover {
+	transform: rotateY(180deg);
+}
+
+
+.mid-column {
+	float: right;
+	width: 50%;	
+}
+
+
+.column {	
+	margin: 10px;
+	float: right;
+	width: 30%;
+}
+
+img {
+	height: 100px;
+	width: 100px;
+}
+
+
+/* Does the pulsing animation on hover */
+@keyframes pulse {
+	/* Start of the animation */
+	0% {
+		/* Keeps the size of 1 : 1 */
+		transform: scale(1, 1);
+		opacity: 0.6;
+	}
+
+	/* End of animation */
+	100% {
+		transform: scale(1.1, 1.35);
+		opacity: 0;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	nav ul li{
+		float: none;
+	}
+}
+
