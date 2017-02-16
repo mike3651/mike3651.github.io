@@ -1,242 +1,265 @@
 <!DOCTYPE html>
-<!-- 
-	 Michael Wilson
-	 ©2017 -->
-<html>
 <head>
-	<title>Welcome to my web page!</title>
-	<!-- LINK TO MY CSS -->
-	<link rel="stylesheet" type="text/css" href="myPHP.css">
 
-	<!-- LINK TO W3 STYLE SHEET-->
-	<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+	<!-- MY CSS STYLING SHEET -->
+	<link rel="stylesheet" type="text/css" href="page.css">
 
-	<!-- LINK TO MY JS -->
-	<script type="text/javascript" src="myPHP.js"></script>
+
+	<!-- LINK TO BOOTSTRAP CSS -->
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- FOR JQUERY -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+	<!-- LINK TO MY OWN JAVASCRIPT -->
+	<script type="text/javascript" src="page.js"></script>
+
+	<!-- LINK TO BOOSTRAPS JS -->
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<title>Styling Page</title>
 </head>
-<body>
-	<h1>Welcome to my portfolio!</h1>
-	
-	<!-- Creates a navigation bar -->
-	<div id="nav">
-		<ul>
-			<li><a href="#edu">Education</a></li>
-			<li><a href="#exp">Experience</a></li>
-			<li><a href="#hack">Hackathons</a></li>
-			<li><a href="#lang">Languages</a></li>
-			<li><a href="#fun">Hobbies</a></li>
-		</ul>
-	</div>
-	<div id="resume">
-		<div id="edu">
-			<h2>Education</h2>	
-			<h3>University of Washington</h3>
-			<h4>Courses</h4>
-			<ul>		
-				<li>Computer Programming I</li>	
-				<li>Computer Programming II</li>
-				<li>Web Programming</li>	
-				<li>Programming Practicum</li>
-				<li>Discrete Structures</li>
-				<li><a href="https://github.com/mike3651/CSE332/tree/master/CSE/332">Data Structures</a></li>
-				<li><a href="https://github.com/mike3651/Algorithms/blob/master/Chapter_2/algorithms.cpp">Analysis of Algorithms</a></li>
-				<li>Software Engineering &amp; Quality Assurance</li>
-				<li>Machine Organization</li>
-			</ul>
+
+<!-- ADDED SCROLL SPY TO HIGHLIGHT CURRENT TARGET ON NAVBAR -->
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+	<!-- CREATE THE NAVBAR -->
+	<div class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<!-- USE THIS FOR THE HAMBURGER TOGGLE -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">My logo will go here </a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#home">HOME</a></li>
+					<li><a href="#languages">LANGUAGES</a></li>
+					<li><a href="#events">EVENTS</a></li>
+					<li><a href="#contact">CONTACT</a></li>
+					<li><a href="#resume">RESUME</a></li>
+				</ul>
+			</div>
 		</div>
-		<div id="exp">
-			<h2>Experience</h2>		
-			<h3>WICS, Women in Computer Science <span class="at-end">January 2017 - present</span></h3>
-				<ul>
-					<li>Social Media Officer</li>
-					<ul>
-						<li>In charge of setting up events for the club</li>
-						<li>Reach out to various companies to try to set up tours</li>						
-						<li>Company tours thus far:</li>
-						<ul>
-							<li>Hootsuite, Expected Visit: Late February</li>
-						</ul>
-					</ul>
-				</ul>
-			<h3>Coding with Kids <span class="at-end">March 2016 - Present</span></h3>
-				<ul>
-					<li>Lead School Instructor</li>
-						<ul>
-							<li>
-								Was in charge of instructing of instructing at Medina
-								Academy, Lakeview Elementary, &amp; Peterkirk Elementary
-							</li>
-							<li>In charge of making sure the students stayed on task</li>
-							<li>Teach Students basic programming concepts through scratch</li>
-						</ul>
-					<li>Center Instructor</li>
-						<ul>
-							<li>Teach Levels 1, 2, &amp; 3</li>
-							<li>Concepts I teach are: </li>
-							<ul>
-								<li>Debugging</li>
-								<li>Refactoring</li>
-								<li>Variables</li>
-								<li>Lists/Parallel Lists</li>
-								<li>Conditionals &amp; variables</li>
-								<li>Maps (slight introduction)</li>
-								<li>Hashing (slight introduction)</li>
-								<li>Cloning &amp; Events (through broadcasting)</li>
-							</ul>
-						</ul>
-				</ul>
-			<h3>University of Washington <span class="at-end">June 2016 - Present</span></h3>
-				<ul>
-					<li>Transfer Peer Advisor</li>				
-						<ul>
-							<li>Work specifically on organizing events</li>
-							<li>Help students adapt to transitioning to life at the University</li>
-						</ul>
-				</ul>
-			</div>
-			<div id="hack">
-				<h2>Hackathons &amp; various events</h2>	
-				<ul>
-					<li>Women Techmakers 2016<span class="at-end">@Google-Seattle</span></li>
-					<li>WINFO Hackathon 2016<span class="at-end">@University_of_Washington-Seattle</span></li>
-					<li>DUBHacks 2016<span class="at-end">@University_of_Washington-Seattle</span></li>
-					<li>BC Hacks 2016<span class="at-end">@Bellevue_College</span></li>	
-					<li>Microsoft Plugfest 2016<span class="at-end">@Microsoft-Redmond</span></li>			
-				</ul>	
-			</div>				
-			<div id="lang">
-				<h2>Languages</h2>
-				<table>
-					<tr><td colspan="2">My Language Experience</td></tr>
-					<tr><td>Language</td><td>Time (in months)</td></tr>
-					<div id="languages">
-						<tr>
-							<td>
-							<a href="https://github.com/mike3651/CSE332/tree/master/CSE/CSE333/Week1">C</a>
-							</td>
-							<td>4</td>
-						</tr>
-						<tr><td>C++</td><td>3</td></tr>
-						<tr>
-							<td>
-								<a href="https://github.com/mike3651/Endeavors/blob/master/DOM/dynamicDOM.html">HTML</a>
-							</td>
-							<td>4</td>
-						</tr>
-						<tr>
-							<td>
-							<a href="https://github.com/mike3651/MyCodingProjects/tree/master/Graphs">Java</a>
-							</td>
-							<td>16</td>
-						</tr>
-						<tr>
-							<td>
-							<a href="https://github.com/mike3651/Endeavors/blob/master/DOM/dynamicDOM.js">Javascript</a>
-							</td><td>4</td>
-						</tr>
-						<tr><td>PHP</td><td>3</td></tr>
-						<tr><td>Python</td><td>1</td></tr>
-						<tr><td>SQL</td><td>1</td></tr>
-					</div>
-				</table>
-			</div>
 	</div>
-	<div id="fun">
-		<h2>Hobbies</h2>
+
+	<!-- EMPTY DIV TO REPRESENT THE TOP OF THE PAGE -->
+	<div id="home"></div>
+
+	<!-- THE CAROUSEL!!! -->
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<ol class="carousel-indicators">
+			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#myCarousel" data-slide-to="1" ></li>
+			<li data-target="#myCarousel" data-slide-to="2" ></li>
+		</ol>
+
+		<!-- IMAGES FOR THE CAROUSEL -->
+		<div class="carousel-inner" role="listbox">
+			<div class="item active">
+				<img src="caro/uwt1.jpg" width="1200" height="700"/>
+				<div class="carousel-caption">
+					<h3>The Library</h3>
+					<p>I like to study here</p>
+				</div>
+			</div>
+			<div class="item">
+				<img src="caro/uwt2.jpg" width="1200" height="700"/>
+				<div class="carousel-caption">
+					<h3>The Zag</h3>
+					<p>I take this path to go to eat fresh!</p>
+				</div>
+			</div>
+			<div class="item">
+				<img src="caro/uwt3.jpg" width="1200" height="700"/>
+				<div class="carousel-caption">
+					<h3>The Library at sunset</h3>
+					<p>So darn beautiful! :)</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- GLYPHICONS FOR THE ARROWS -->
+		<a class="left carousel-control" herf="#myCarousel" role="button" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+		</a>
+		<a class="right carousel-control" herf="#myCarousel" role="button" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			<span class="sr-only">NEXT</span>
+		</a>
+	</div>
+	<div id="languages" class="container text-center">
+		<h3>THE TEAM</h3>
+		<p><em>I love video games</em></p>
+		<p>The languages have all bright a unique idea to the table</p>
+		<br />
+		<h2>Programming Languages</h2>
+		<br />
+		<div class="row">
+			<div class="col-sm-4">
+				<p><span class="bold">Java</span></p>
+				<a href="#java" data-toggle="collapse">
+					<img src="img/java.png" class="logo" />
+				</a>
+				<div id="java" class="collapse">
+					<p>Years of experience	: 3</p>
+					<p>Code in 			   	: JGrasp</p>
+					<p>Satisfaction rating	: 4</p>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<p><span class="bold">Python</span></p>
+				<a href="#python" data-toggle="collapse">
+					<img src="img/python.png" class="logo " />
+				</a>
+				<div id="python" class="collapse">
+					<p>Years of experience	: 1</p>
+					<p>Code in 			   	: Sublime</p>
+					<p>Satisfaction rating	: 4</p>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<p><span class="bold">C++</span></p>
+				<a href="#cpp" data-toggle="collapse">
+					<img src="img/cpp.png" class="logo " />
+				</a>
+				<div id="cpp" class="collapse">
+					<p>Years of experience	: 1</p>
+					<p>Code in			   	: Sublime</p>
+					<p>Satisfaction rating	: 3</p>
+				</div>
+			</div>
+		</div>
+		<h2>Web Languages</h2>
+		<br />
+		<div class="row">
+			<div class="col-sm-4">
+				<p><span class="bold">HTML</span></p>
+				<a href="#html" data-toggle="collapse">
+					<img src="img/html.png" class="logo" />
+				</a>
+				<div id="html" class="collapse">
+					<p>Years of experience	: 1</p>
+					<p>Code in			   	: Sublime</p>
+					<p>Satisfaction rating	: 3</p>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<p><span class="bold">CSS</span></p>
+				<a href="#css" data-toggle="collapse">
+					<img src="img/css.png" class="logo " />
+				</a>
+				<div id="css" class="collapse">
+					<p>Years of experience	: 1</p>
+					<p>Code in			   	: Sublime</p>
+					<p>Satisfaction rating	: 2</p>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<p><span class="bold">Javascript</span></p>
+				<a href="#js" data-toggle="collapse">
+					<img src="img/js.png" class="logo" />
+				</a>
+				<div id="js" class="collapse">
+					<p>Years of experience	: 1</p>
+					<p>Code in			   	: Sublime</p>
+					<p>Satisfaction rating	: 5</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- CONTAINER THAT KEEPS TRACK OF MY EVENTS CALENDAR -->
+	<!-- GOING TO USE JS TO PARSE THE VALUES OF TITLES TO 
+	  	 GET AN ESTIMATE AS TO HOW MANY DAYS ARE LEFT UNTIL 
+	  	 THE EVENT -->
+	<div class="events" id="events">
 		<div class="container">
-			<div class="reveal-wrapper games">
-				<div class="reveal-content">
-					<img src="img/OOT.jpeg"/>
-				</div>
-				<div class="reveal-top reveal-top-games">
-					<!-- content that rests above the hidden content -->
-					<h3>Video Games</h3>
-				</div>
-			</div>
-		</div>	
-		
-		<div class="container mid-column">
-			<div class="reveal-wrapper mus">
-				<div class="reveal-content">
-					
-				</div>
-				<div class="reveal-top">
-					<!-- content that rests above the hidden content -->
-					<h3>Music</h3>
-				</div>
-			</div>
-		</div>				
+			<h3 class="text-center">UPCOMING EVENTS</h3>
+			<p class="text-center">Catch me at the following events!</p>
+			<ul class="list-group">
+				<li class="list-group-item">January 28 			 	: WINFO 2017 
+					<span class="label label-danger">Date Passed!</span></li>
+				<li class="list-group-item">February 18 &amp; 19 	: T-Mobile Codeday 
+					<span class="badge" title="2/18">3 days left</span>
+				</li>
+				<li class="list-group-item">February 28 			: Hootsuite Tour
+					<span class="badge" title="2/28">13 days left</span>
+				</li>
+			</ul>
 
-		<div class="container mid-column">
-			<div class="reveal-wrapper mtg">
-				<div class="reveal-content">
-					
+			<!-- THUMBNAILS FOR THE CLASSES THAT I HAVE VISITED OR WILL VISIT -->
+			<div class="row text-center">
+				<div class="col-sm-4">
+					<div class="thumbnail">
+						<img class="logo" src="thumbnails/winfo.png" height="300" width="400">
+						<p><strong>Winfo Hackathon, Seattle</strong></p>
+						<p>Sat. 28 January 2017</p>
+						<button class="btn">Reserve Meeting</button>
+					</div>
 				</div>
-				<div class="reveal-top">
-					<!-- content that rests above the hidden content -->
-					<h3>Magic the Gathering</h3>
+				<div class="col-sm-4">
+					<div class="thumbnail">
+						<img class="logo" src="thumbnails/tmobile.png" height="300" width="400">
+						<p><strong>T-Mobile code day, Bellevue</strong></p>
+						<p>Sat. 18 February 2017</p>
+						<button class="btn">Reserve Meeting</button>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="thumbnail">
+						<img class="logo" src="thumbnails/hootsuite.png" height="300" width="400">
+						<p><strong>HootSuite visit, Vancouver, Canada</strong></p>
+						<p>Sat. 28 January 2017</p>
+						<button class="btn">Reserve Meeting</button>
+					</div>
 				</div>
 			</div>
-		</div>	
+		</div>			
 	</div>
-	<div id="more-stuff">
-		<div class="container">			
-			<div class="btn column">
-				<a href="https://github.com/mike3651">	
-				<p>My Github</p>
-				<div class="bg"></div>
-				</a>
-			</div>
-					
-			<div class="btn column">
-				<a href="https://www.linkedin.com/in/mike365">
-				<p>My LinkedIn</p>
-				<div class="bg"></div>
-				</a>
-			</div>
 
-			<div class="btn column">
-				<a href="https://www.facebook.com/mike.o.wilson.7">
-				<p>My Facebook</p>
-				<div class="bg"></div>
-				</a>
+	<!-- CONTACT INFORMATION -->
+	<div id="contact" class="container">
+		<h3 class="text-center">Contact</h3>
+		<p class="text-center"><em>Let's Chat!</em>		
+		<!-- THE FORM -->
+		<div class="row">
+			<div class="col-md-4">
+				<p>Recuiter? Leave a message.</p>
+				<p><span class="glyphicon glyphicon-map-marker"></span>Seattle, WA</p>
+				<p><span class="glyphicon glyphicon-phone"></span>Phone: 425-877-6539</p>
+				<p><span class="glyphicon glyphicon-envelope"></span>Email: pianoplayer868@hotmail.com</p>	
+			</div>
+			<div class="col-md-8">
+				<div class="row">
+					<div class="col-sm-6 form-group">
+						<input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+					</div>  
+					<div class="col-sm-6 form-group">
+						<input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+					</div>  
+				</div>
+				<textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
+				<br />
+				<div class="row">
+					<div class="col-md-12 form-group">
+						<button class="btn pull-right" type="submit">Send</button>
+					</div>
+				</div>
 			</div>
 		</div>
-
-		<div id="facts">
-			<div class="card-container column">
-				<div class="card">		
-					<div class="front">
-						<h1>Age</h1>
-					</div>
-					<div class="back">
-						<h1>24</h1>
-					</div>
-				</div>
-			</div>
-			<div class="card-container column">
-				<div class="card">		
-					<div class="front">
-						<h1>School</h1>
-					</div>
-					<div class="back">
-						<img src="img/uw.png" />
-					</div>
-				</div>
-			</div>
-			<div class="card-container column">
-				<div class="card">		
-					<div class="front">
-						<h1>Passion</h1>
-					</div>
-					<div class="back">
-						<h1>Music</h1>
-					</div>
-				</div>
-			</div>
-		</div>		
 	</div>
 
-	<div id="bottom"></div>
+	<!-- my resume goes here! -->
+	<div id="resume">
+		<object width="100%" height="4000" data="files/resume2.pdf">
+			<div class="text-center">
+				<h2>If you are seeing this then your browser can't render my file ): </h2>
+				<h3>Use Chrome!</h3>
+			</div>
+		</object>
+	</div>
 </body>
 </html>

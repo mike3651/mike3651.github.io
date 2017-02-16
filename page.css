@@ -1,0 +1,75 @@
+.container {
+	padding: 80px 120px;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.logo {
+	height: 200px;
+	width: 200px;
+	margin-bottom: 25px;
+	opacity: 0.8;
+	border: 10px solid transparent;
+}
+
+.logo:hover{
+	border-color: #f1f1f1;
+}
+
+.carousel-inner img {
+	width: 100%;
+	margin: auto;
+}
+
+.carousel-caption h3 {
+	color: #fff !important;
+}
+
+/* STYLING FOR THE EVENTS SECTION */
+.events {
+	background: #2d2d30;
+	color: #bdbdbd;
+}
+
+.events h3 {
+	color: #fff;
+}
+
+.events p {
+	font-style: italic;
+}
+
+.thumbnail {
+	padding: 0 0 15 0;
+	border: none;
+	border-radius: 0;
+}
+
+.thumbnail p {
+	margin-top: 15px;
+	color: #555;
+}
+
+/* STYLING FOR THE BUTTONS */
+.btn {
+	padding: 10px 20px;
+	background-color: #333;
+	color: #f1f1f1;
+	border-radius: 0;
+	transition: 0.2s;
+}
+
+.btn:hover, .btn:focus {
+	border: 1px solid #333;
+	background-color: #fff;
+	color: #000;
+}
+
+/* hide text when the screen is less than 600px */
+@media (max-width: 680px) {
+	.carousel-caption {
+		display: none;
+	}
+}
