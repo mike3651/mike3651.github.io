@@ -1,0 +1,98 @@
+<!-- This is part of a two hour challenge
+
+	 The idea of this is to create a canvas that a user can paint on
+
+	 Start time: 10:15am
+	 End time  : 12:15am
+
+	 ©Michael Wilson -->
+<!DOCTYPE html>
+<head>
+	<title>The Canvas Editor</title>
+
+	<!-- LINKS TO BOOTSTRAP FILES -->
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- LINK TO JQUERY -->
+	<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<!-- LINK TO THE CSS -->
+	<link rel="stylesheet" type="text/css" href="editor.css">
+	
+
+	<!-- LINK TO THE JS -->
+	<script type="text/javascript" src="editor.js"></script>
+	
+
+</head>
+<body>
+	<h1>Canvas Editor</h1>
+	<div id="main">	
+		<div class="row">	
+			<div class="col-sm-4">
+				<div id="debug">
+					<h2>Debug mode</h2>
+					<p id="size"></p>
+					<p id="color"></p>
+					<p id="brush"></p>
+					<p id="location"></p>
+				</div>
+			</div>
+			<div id="canvas" class="col-sm-4"></div>
+			<div id="hot-key-reference" class="col-sm-4">
+				<table>
+					<tr>
+						<th>Hot key</th>
+						<th>Functionality</th>
+					</tr>
+					<tr>
+						<td>Space</td>
+						<td>Clears the contents of the canvas</td>
+					</tr>
+					<tr>
+						<td>S</td>
+						<td>Changes the paint shape to a square</td>
+					</tr>
+					<tr>
+						<td>C</td>
+						<td>Changes the paint shape to a circle</td>
+					</tr>
+					<tr>
+						<td>D</td>
+						<td>Changes the color</td>
+					</tr>
+					<tr>
+						<td>A</td>
+						<td>Changes to the size on the left of the current size</td>
+					</tr>
+					<tr>
+						<td>F</td>
+						<td>Changes to the size on the right of the current size</td>
+					</tr>
+					<tr>
+						<td>W</td>
+						<td>Toggles debug mode</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<div id="tool-set">
+		<div class="row">
+			<div class="col-sm-6">
+				<h3>Select a color!</h3>
+				<div id="color-chooser">			
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<h3>Select a size!</h3>
+				<div id="size-chooser">			
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

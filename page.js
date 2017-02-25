@@ -19,3 +19,19 @@ $(document).ready(function() {
 		}
 	});
 })
+
+// keeps track of the home page 
+var home;
+
+window.onload = function() {
+	var projects = $(".project");
+	for(var i = 0; i < projects.length; i++) {
+		projects[i].onclick = loadPage;
+	}
+	home = window.location.href;
+}
+
+// function that loads the contents of an html page
+function loadPage() {
+	window.loction = "thetatest.com/projects/" + this.value;
+}
