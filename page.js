@@ -33,6 +33,6 @@ window.onload = function() {
 
 // function that loads the contents of an html page
 function loadPage() {
-	window.loction = "thetatest.com/projects/" + this.value;
+	window.location = "thetatest.com/projects/" + this.value;
 	alert(projects.length);
 }
