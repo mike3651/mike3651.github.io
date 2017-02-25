@@ -25,6 +25,7 @@ var home;
 
 window.onload = function() {
 	var projects = $(".project");
+	alert(projects.length);
 	for(var i = 0; i < projects.length; i++) {
 		projects[i].onclick = loadPage;
 	}
