@@ -34,5 +34,5 @@ window.onload = function() {
 // function that loads the contents of an html page
 function loadPage() {
 	window.location = "thetatest.com/projects/" + this.value;
-	alert(projects.length);
+	alert("thetatest.com/projects/" + this.value);
 }
