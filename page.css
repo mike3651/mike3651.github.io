@@ -1,3 +1,21 @@
+/* Page styling sheet
+ * 
+ * ©Michael Wilson */
+
+/* styling to make logos appear to be more modern */
+.logo-modern {
+	border-radius: 50%;
+}
+
+/* Styles all information text */
+.info:hover {
+	text-decoration: none;	
+}
+
+.info:hover {
+	cursor: pointer;	
+}
+
 .container {
 	padding: 80px 120px;
 }
@@ -6,7 +24,8 @@
 	font-weight: bold;
 }
 
-.logo {
+/* General styling for the images with the logo class */
+.logo, .logo-modern {
 	height: 200px;
 	width: 200px;
 	margin-bottom: 25px;
@@ -50,7 +69,7 @@
 	color: #555;
 }
 
-/* STYLING FOR THE BUTTONS */
+/*
 .btn {
 	padding: 10px 20px;
 	background-color: #333;
@@ -65,9 +84,9 @@
 	color: #000;
 }
 
-/* hide text when the screen is less than 600px */
+
 @media (max-width: 680px) {
 	.carousel-caption {
 		display: none;
 	}
-}
+}*/

@@ -22,7 +22,7 @@
 <!-- ADDED SCROLL SPY TO HIGHLIGHT CURRENT TARGET ON NAVBAR -->
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
 	<!-- CREATE THE NAVBAR -->
-	<div class="navbar navbar-default navbar-fixed-top">
+	<div class="navbar navbar-default navbar-fixed-top navbar-inverse">
 		<div class="container-fluid">
 			<!-- USE THIS FOR THE HAMBURGER TOGGLE -->
 			<div class="navbar-header">
@@ -47,10 +47,52 @@
 	</div>
 
 	<!-- EMPTY DIV TO REPRESENT THE TOP OF THE PAGE -->
-	<div id="home"></div>
+	<div id="home" class="container"></div>
 
 	<!-- DIV WITH INFORMATION ABOUT ME, POPULATE INFORMATION FROM A TXT FILE -->
-	<div id="who-am-i"></div>
+	<div id="who-am-i" class="container container-fluid">
+		<h2 class="text-center">Learn more about me!</h2>
+		<div class="row">
+			<div class="col-sm-4">				
+				<a href="#work" data-toggle="collapse" class="info">
+					<h3 class="text-center">Work</span></h3>			
+				</a>
+				<div id="work" class="collapse">
+					<a href="#cwk" data-toggle="collapse">
+						<img src="work/cwk.png" class="logo-modern"/>		
+					</a>
+					<div id="cwk" class="collapse">	
+						<p>Job Title: Level II &amp; III center Instructor</p>
+						<p>Duration: March 2016 - present</p>
+						<p>Tasks: </p>
+						<ul>
+							<li>Teach kids basic fundamentals of programming</li>
+							<li>Organize lesson schedule to keep the students engaged</li>
+							<li>Help kids adapt from coding in scratch to coding in python</li>
+						</ul>
+					</div>
+					<a href="#uwt" data-toggle="collapse">
+						<img src="work/uwt.png"  class="logo-modern"/>		
+					</a>
+					<div id="uwt" class="collapse">	
+						<p>Job Title: Transfer Peer Advisor</p>
+						<p>Duration: June 2016 - present</p>
+						<p>Tasks: </p>
+						<ul>
+							<li>Schedule events on campus</li>
+							<li>Help guide students during orientaiton</li>					
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<h3 class="text-center">Education</h3>
+			</div>
+			<div class="col-sm-4">
+				<h3 class="text-center">Hobbies</h3>
+			</div>
+		</div>
+	</div>
 
 <!-- 	
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
