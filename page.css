@@ -8,12 +8,24 @@
 }
 
 /* Styles all information text */
-.info:hover {
+.info:hover, .info {
 	text-decoration: none;	
 }
 
 .info:hover {
 	cursor: pointer;	
+}
+
+.info:hover:nth-of-type(1n) {	
+	background-color: red;
+}
+
+.info:hover:nth-of-type(2n) {	
+	background-color: blue;
+}
+
+.info:hover:nth-child(3n) {	
+	background-color: lightgreen;
 }
 
 .container {
