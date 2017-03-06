@@ -45,6 +45,7 @@
 }
 
 .project-image {
+	border: 1px solid grey;
 	box-shadow: 2px 2px grey;
 }
 
