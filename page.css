@@ -38,6 +38,7 @@
 
 /* General styling for the images with the logo class */
 .logo, .logo-modern {
+	margin: 25px;
 	height: 200px;
 	width: 200px;
 	/*margin-bottom: 25px;*/
