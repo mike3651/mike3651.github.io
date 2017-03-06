@@ -1,0 +1,37 @@
+<!-- This is the simple HTML file for coin_collector game
+
+	 This is part of an hour of code challenge
+
+	 Michael Wilson -->
+
+<!DOCTYPE html>
+<head>
+
+	<!-- MY CSS -->
+	<link rel="stylesheet" type="text/css" href="coin_collector.css">
+
+	<!-- MY JS -->
+	<script type="text/javascript" src="coin_collector.js"></script>
+
+	<!-- LINK TO JQUERY -->
+	<script
+			  src="https://code.jquery.com/jquery-3.1.1.js"
+			  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+			  crossorigin="anonymous"></script>
+
+	<title>Coin Collector mini game</title>
+</head>
+<body>
+	<div id="score-details">
+		<p id="my-score">Current score: </p>		
+		<input id="toggle-debug" type="checkbox"/>Debug<br/>
+		<!-- THIS AREA WILL ONLY SHOW UP IF DEBUG MODE IS ENABLED -->
+		<div id="debug">
+			<h1>You have enabled debug mode</h1>
+			<p id="direction">Direction: </p>
+			<p id="snake-list">List of coordinates: </p>
+		</div>
+	</div>
+	<div id="game-board"></div>
+</body>
+</html>

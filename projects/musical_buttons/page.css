@@ -1,0 +1,52 @@
+body {
+	background-color: black;
+	color: lightgreen;	
+	font-size: 24px;
+	font-family: monospace;
+}
+
+#keys, #options-pane {
+	width: 300px;
+}
+
+#keys {			
+	height: 550px;
+	border: 1px solid green;
+}
+
+.note, .falling-note{
+	border: 1px solid red;	
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	position: absolute;		
+}
+
+.note, #keys, #options-pane {
+	bottom: 0;
+}
+
+.note, #keys, #options-pane{
+	position: fixed;		
+}
+
+.falling-note {
+	background-color: blue;	
+}
+
+#success-bar {
+	height: 100px;
+	width: 50px;
+}
+
+#options-pane{
+	text-align: left;	
+	right: 0;	
+	box-shadow: 2px 2px grey;
+	height: 300px;
+	border: 3px solid green;
+}
+
+#options-pane div {
+	text-align: center;
+}

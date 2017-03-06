@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>	
+
+	<!-- LINK TO THE JQUERY-->
+	<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+
+	<!-- LINKS TO BOOTSTRAP -->
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<!-- LINK TO MY JAVASCRIPT -->
+	<script type="text/javascript" src="page.js"></script>
+
+	<!-- LINK TO MY CSS -->
+	<link rel="stylesheet" type="text/css" href="page.css" />
+	
+	
+</head>
+<body>
+	<div id="container">
+		<div class="row">
+			<div id="game-board" class="col-sm-6">
+				<canvas id="canvas"></canvas>
+			</div>
+			<div id="debug" class="col-sm-6">
+				<div class="row">
+					<div id="keyboard_state" class="col-sm-6">
+						<p id="move-up">Can move up: true</p>
+						<p id="move-down">Can move down: true</p>
+						<p id="move-left">Can move left: true</p>
+						<p id="move-right">Can move right: true</p>
+						<p id="drop-bomb">Can drop bomb: true</p>
+					</div>
+					<div id="console" class="col-sm-6"></div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+		<audio>
+			<source src="XP/log_off.wav"></source>
+		</audio>
+		<audio>
+			<source src="XP/error.wav"></source>
+		</audio>
+		<audio>
+			<source src="XP/stop.wav"></source>
+		</audio>
+	
+</body>
+</html>

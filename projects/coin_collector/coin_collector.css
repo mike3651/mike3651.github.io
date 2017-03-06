@@ -1,0 +1,30 @@
+/* Styling sheet for the coin collector game
+ * 
+ * This is part of an hour of code challenge
+ *
+ * ©Michael Wilson, 2017 */
+
+#game-board {
+	height: 400px;
+	width: 400px;
+	border: 1px dashed black;
+	position: relative;
+}
+
+.player, .coin {
+	position: absolute;
+	border-radius: 50%;
+}
+
+/*#player {
+	background-color: red;
+}
+*/
+.coin {
+	background-color: yellow;
+	z-index: -1;
+}
+
+#debug {
+	display: none;
+}
