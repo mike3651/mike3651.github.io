@@ -3,7 +3,7 @@
  * ©Michael Wilson 2017 */
 (function() {
 	var timer = null;
-	var speed = 35;
+	var speed = 15;
 	var drop_time = 0;
 
 	// keeps track of the scoring
