@@ -81,6 +81,10 @@
 	color: #555;
 }
 
+.row {
+	padding: 2em;
+}
+
 /*
 .btn {
 	padding: 10px 20px;
