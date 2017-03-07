@@ -27,12 +27,17 @@
 		$("#canvas").css("height", WINDOW_HEIGHT);
 		$("#canvas").css("width", WINDOW_WIDTH);
 		setUpBubbles();
-		$("#animate").click(toggleAnimation);
+		
+		// call to start the animation immediately 
+		toggleAnimation($("#animate"));
+		$("#animate").click(function(){
+			toggleAnimation($("#animate"))
+		});
 	}
 
 	// function that toggles the canvas animation
-	function toggleAnimation() {
-		if($(this).prop("checked")) {
+	function toggleAnimation(div_clicked) {
+		if($(div_clicked).prop("checked")) {
 			canvas_timer = setInterval(draw, 30);
 		} else {
 			clear();
@@ -45,11 +50,11 @@
 	function setUpBubbles() {
 		for(var i = 0; i < BUBBLE_COUNT; i++) {
 			var bubble = {
-				x: canvas.width / 2,
-				y: canvas.height / 2,
-				r: Math.round(Math.random() * 5) + 3,
-				xSpeed: (Math.random()-0.5) * 7,
-				ySpeed: (Math.random()-0.5) * 7,
+				x: Math.random() * canvas.width,
+				y: Math.random() * canvas.height,
+				r: Math.round(Math.random() * 3) + 5,
+				xSpeed: (Math.random()-0.5) * 4,
+				ySpeed: (Math.random()-0.5) * 4,
 				color: getColor()
 			}	
 			bubbles.push(bubble);
@@ -94,9 +99,14 @@
 
 	// function that gets a random RGB value and returns it
 	function getColor() {
+		// RGB ranges
+		// r [0:255]
+		// g [204:255]
+		// b [0:204]
+
 		var red = Math.round(Math.random() * 255);
-		var green = Math.round(Math.random() * 255);
-		var blue = Math.round(Math.random() * 255);
+		var green = Math.round(Math.random() * 51) + 204;
+		var blue = Math.round(Math.random() * 180);
 		return "rgba(" + red + ", " + green + ", " + blue + ", 0.6)";
 	}
 
