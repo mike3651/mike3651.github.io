@@ -7,27 +7,6 @@
 	border-radius: 50%;
 }
 
-/* Styles all information text */
-.info:hover, .info {
-	text-decoration: none;	
-}
-
-.info:hover {
-	cursor: pointer;	
-}
-
-.info:hover:nth-of-type(1n) {	
-	background-color: red;
-}
-
-.info:hover:nth-of-type(2n) {	
-	background-color: blue;
-}
-
-.info:hover:nth-child(3n) {	
-	background-color: lightgreen;
-}
-
 .container {
 	padding: 80px 120px;
 }
@@ -91,24 +70,11 @@ h4 {
 	text-decoration: underline;
 }
 
-/*
-.btn {
-	padding: 10px 20px;
-	background-color: #333;
-	color: #f1f1f1;
-	border-radius: 0;
-	transition: 0.2s;
+#canvas, #various-controls {
+	position: fixed;	
 }
 
-.btn:hover, .btn:focus {
-	border: 1px solid #333;
-	background-color: #fff;
-	color: #000;
+#various-controls {
+	bottom: 0;
+	left: 0;
 }
-
-
-@media (max-width: 680px) {
-	.carousel-caption {
-		display: none;
-	}
-}*/

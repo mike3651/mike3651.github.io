@@ -10,19 +10,22 @@
 
 	<!-- FOR JQUERY -->
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	
+	<!-- LINK TO BOOSTRAPS JS -->
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 	<!-- LINK TO MY OWN JAVASCRIPT -->
 	<script type="text/javascript" src="page.js"></script>
-
-	<!-- LINK TO BOOSTRAPS JS -->
-	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<title>My personal Page</title>
 </head>
 
 <!-- ADDED SCROLL SPY TO HIGHLIGHT CURRENT TARGET ON NAVBAR -->
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+	<!-- THIS CANVAS WILL REPRESENT MY BACKGROUND -->
+	<canvas id="canvas"></canvas>
+
 	<!-- CREATE THE NAVBAR -->
-	<div class="navbar navbar-default navbar-fixed-top navbar-inverse">
+	<div id="navbar" class="navbar navbar-default navbar-fixed-top navbar-inverse">
 		<div class="container-fluid">
 			<!-- USE THIS FOR THE HAMBURGER TOGGLE -->
 			<div class="navbar-header">
@@ -97,49 +100,6 @@
 			</div>
 		</div>
 	</div>
-
-<!-- 	
-	<div id="myCarousel" class="carousel slide" data-ride="carousel">
-		<ol class="carousel-indicators">
-			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-			<li data-target="#myCarousel" data-slide-to="1" ></li>
-			<li data-target="#myCarousel" data-slide-to="2" ></li>
-		</ol>
-
-		
-		<div class="carousel-inner" role="listbox">
-			<div class="item active">
-				<img src="caro/uwt1.jpg" width="1200px" height="700px"/>
-				<div class="carousel-caption">
-					<h3>The Library</h3>
-					<p>I like to study here</p>
-				</div>
-			</div>
-			<div class="item">
-				<img src="caro/uwt2.jpg" width="1200px" height="700px"/>
-				<div class="carousel-caption">
-					<h3>The Zag</h3>
-					<p>I take this path to go to eat fresh!</p>
-				</div>
-			</div>
-			<div class="item">
-				<img src="caro/uwt3.jpg" width="1200px" height="700px"/>
-				<div class="carousel-caption">
-					<h3>The Library at sunset</h3>
-					<p>So darn beautiful! :)</p>
-				</div>
-			</div>
-		</div>
- 
-		
-		<a class="left carousel-control" herf="#myCarousel" role="button" data-slide="prev">
-			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-		</a>
-		<a class="right carousel-control" herf="#myCarousel" role="button" data-slide="next">
-			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-			<span class="sr-only">NEXT</span>
-		</a>
-	</div> -->
 
 	<!-- SECTION FOR MY PROJECTS -->
 	<div id="projects" class="container text-center">
@@ -388,6 +348,10 @@
 				</a>
 			</div>
 		</div>
+	</div>
 
+	<div id="various-controls">
+		<input id="animate" type="checkbox"/> Animation<br/>
+	</div>
 </body>
 </html>
