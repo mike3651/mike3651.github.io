@@ -3,7 +3,7 @@
 	var WINDOW_HEIGHT = window.innerHeight, WINDOW_WIDTH = window.innerWidth;
 
 	// canvas elements
-	var canvas, ctx, bubbles = [];
+	var canvas, ctx, bubbles = [], BUBBLE_COUNT = 10;
 
 	// take into consideration the navbar size when generating the bubbles
 	var NAVBAR_HEIGHT;
@@ -35,7 +35,7 @@
 
 	// function that sets up the bubble array 
 	function setUpBubbles() {
-		for(var i = 0; i < 6; i++) {
+		for(var i = 0; i < BUBBLE_COUNT; i++) {
 			var bubble = {
 				x: canvas.width / 2,
 				y: canvas.height / 2,
