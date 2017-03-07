@@ -2,6 +2,10 @@
  * 
  * ©Michael Wilson */
 
+body {
+	background-color: rgb(158, 242, 255);
+}
+
 /* styling to make logos appear to be more modern */
 .logo-modern {
 	border-radius: 50%;
