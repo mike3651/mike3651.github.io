@@ -3,7 +3,24 @@
  * ©Michael Wilson */
 
 body {
-	background-color: rgb(255, 255, 204);
+	/* background-color: rgb(255, 255, 204); Tannish color */
+	background-color: #fff;
+}
+
+#projects {
+	opacity: 0.9;
+}
+
+.project-information {	
+	background-color: lightgrey;
+	border: 1px solid black;
+	box-shadow: 3px 3px grey;
+	text-align: left;	
+	padding: 1em;	
+}
+
+.project-languages {
+	list-style-type: none;	
 }
 
 /* styling to make logos appear to be more modern */
