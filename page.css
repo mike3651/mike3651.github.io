@@ -2,9 +2,12 @@
  * 
  * ©Michael Wilson */
 
-body:not(#canvas) {
+body {
 	/* background-color: rgb(255, 255, 204); Tannish color */
 	background-color: #fff;
+}
+
+#projects {
 	opacity: 0.9;
 }
 
