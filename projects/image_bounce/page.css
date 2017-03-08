@@ -1,0 +1,8 @@
+.my-image {
+	max-height: 100px;
+	max-width: 100px;	
+}
+
+#images {
+	display: none;
+}
