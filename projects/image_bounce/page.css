@@ -43,8 +43,3 @@ body {
 	position: fixed;
 	border: 1px solid #fff;
 }
-
-ul {
-	text-indent: 0;
-	list-style-type: none;
-}
