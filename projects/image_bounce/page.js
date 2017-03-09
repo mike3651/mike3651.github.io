@@ -117,10 +117,10 @@
 					meme.ySpeed *= -1;
 				} 				
 			}
-			if(meme.x < 0 || meme.x > canvas.width - MAX_WIDTH) {
+			if(meme.x < 0 || meme.x > canvas.width - meme.xSpeed) {
 				meme.xSpeed *= -1;
 			}
-			if(meme.y < 0 || meme.y > canvas.height - MAX_HEIGHT) {
+			if(meme.y < 0 || meme.y > canvas.height - meme.ySpeed) {
 				meme.ySpeed *= -1;
 			}
 		}
