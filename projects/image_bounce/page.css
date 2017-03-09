@@ -8,7 +8,7 @@
 
 body {
 	color: #fff;
-	text-align: center;	
+	text-align: center;		
 }
 
 #images {
@@ -18,5 +18,32 @@ body {
 #canvas {	
 	position: fixed;
 	top:0;
+	z-index: -1;
+}
+
+#debug, canvas {
 	left:0;
+}
+
+#text-screen {
+	color: #fff;
+	font-size: 65px;
+	font-family: monospace;
+	vertical-align: middle;	
+}
+
+#text {
+	left: 50%;	
+	top: 50%;	
+}
+
+#debug {
+	text-align: left;
+	bottom: 0;
+	position: fixed;
+}
+
+ul {
+	text-indent: 0;
+	list-style-type: none;
 }

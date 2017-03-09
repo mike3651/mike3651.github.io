@@ -15,18 +15,38 @@
 	var image_sources = ["star_trek.png", "tyson.png", "willy_wonka.png", "cash_me_ousside.png",
 						"savage_dr_phil.png"];
 	var images = [];
+
+	// factor of speed 
+	var speed_factor = 1.1;
+
+	// lists of hints 
+	var hints = [
+		"Press space to restart", "Press a to speed up the memes",
+		"Press f to slow down the memes", "womp, womp"
+		];
+
+	var text_div;
 	
 	window.onload = function() {
 		canvas = document.getElementById("canvas");
 		context = canvas.getContext("2d");
+
+		$("#text-screen").css("height", window.innerHeight);
+		$("#text-screen").css("width", window.innerWidth);		
+
 		canvas.width = window.innerWidth;
 		canvas.height = window.innerHeight;
+		
+
 		$(window).resize(function() {
 			canvas.width = window.innerWidth;
 			canvas.height = window.innerHeight
+			$("#text-screen").css("height", canvas.height);
+			$("#text-screen").css("width", canvas.width);
 		});
-
+		document.addEventListener("keydown", triggered);
 		setUpImages();
+		setInterval(changeText, 10000);
 	}
 
 
@@ -53,6 +73,8 @@
 			img.className = "my-image"
 			$("#images").append(img);
 		}
+
+		setSpeedValues();
 
 		setInterval(draw, 30);
 	}
@@ -90,6 +112,7 @@
 					&& meme.x + meme.width > box.x 
 					&& meme.y < box.y + box.height
 					&& meme.y + meme.height > box.y) {
+					
 					meme.xSpeed *= -1;
 					meme.ySpeed *= -1;
 				} 				
@@ -102,4 +125,62 @@
 			}
 		}
 	}
+
+	// function that checks for triggered events
+	function triggered(e) {
+		if(e.keyCode == 32){
+			reset();
+		}
+		if(e.keyCode == 65) {
+			changeSpeed(true);
+		}
+		if(e.keyCode == 70) {
+			changeSpeed(false);
+		}
+	} 
+
+	// resets the memes
+	function reset() {
+		for(var i = 0; i < images.length; i++) {
+			images[i].x = Math.random() * canvas.width;
+			images[i].y = Math.random() * canvas.height;
+			images[i].xSpeed =  (Math.random() -0.5) * 25 + 1;
+			images[i].ySpeed =  (Math.random() - 0.5) * 25 + 1;
+		}
+	}
+
+	// function that continually changes the text
+	function changeText() {		
+		$("#text").fadeOut(5000);
+		$("#text").html(hints[Math.floor(Math.random() * hints.length)]);
+		$("#text").fadeIn(5000);
+	}
+
+	// speeds up the rate of change of each meme
+	function changeSpeed(speedUp) {
+		for(var i = 0; i < images.length; i++) {
+			if(speedUp) {
+				images[i].xSpeed *= speed_factor;
+				images[i].ySpeed *= speed_factor;
+			} else {
+				images[i].xSpeed /= speed_factor;
+				images[i].ySpeed /= speed_factor;
+			}		
+		}
+		setSpeedValues();
+	}
+
+	// function that sets the speed values
+	function setSpeedValues() {
+		// clear the previous html if there is any
+		$("#debug-stats").html("");
+
+		for(var i = 0; i < images.length; i++) {
+			var p = document.createElement("p");
+			p.innerHTML = "xSpeed: " + images[i].xSpeed + " ySpeed: " 
+					+ images[i].ySpeed;
+			$("#debug-stats").append(p);
+		}		
+	}
+
 })();
