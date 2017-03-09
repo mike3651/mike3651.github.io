@@ -6,10 +6,15 @@
 	max-width: 100px;	
 }
 
+body {
+	color: #fff;
+	text-align: center;	
+}
+
 #images {
 	display: none;
 }
 
-#canvas {
-	margin: 0;
+#canvas {	
+	position: fixed;
 }
