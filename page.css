@@ -8,6 +8,7 @@ body {
 }
 
 table {
+
 	background-color: lightgrey;	
 }
 
@@ -16,16 +17,12 @@ td, tr, th {
 	padding: 4px;
 }
 
-#projects {
-	opacity: 0.9;
+table, .project-image {
+	box-shadow: 3px 3px grey;
 }
 
-.project-information {	
-	background-color: lightgrey;
-	border: 1px solid black;
-	box-shadow: 3px 3px grey;
-	text-align: left;	
-	padding: 1em;	
+#projects {
+	opacity: 0.9;
 }
 
 .project-languages {
@@ -57,7 +54,6 @@ td, tr, th {
 	height: 100px;
 	width: 100px;
 	border: 2px solid grey;
-	box-shadow: 2px 2px grey;
 }
 
 .logo:hover{
