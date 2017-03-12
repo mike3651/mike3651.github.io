@@ -1,0 +1,32 @@
+/*
+	Michael Wilson
+	My simple CSS page 
+*/
+
+h1 {
+	text-align: center;
+}
+
+#canvas {
+	width: 100%;
+	height: 500px;
+	border: 2px solid black;
+	box-shadow: 4px 4px lightgrey;
+	vertical-align: middle;	
+}
+
+table, #canvas {
+	margin: auto;
+}
+
+th, tr {
+	border: 1px solid black;	
+}
+
+table, tr, th {
+	padding: 5px;
+}
+
+th {
+	text-align: center;
+}

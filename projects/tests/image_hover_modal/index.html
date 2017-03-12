@@ -1,0 +1,50 @@
+<!-- 
+	Michael Wilson
+	My HTML file 
+-->
+
+<!DOCTYPE html>
+<head>
+	<!-- THIS IS THE JQUERY CDN -->
+	<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+
+	<!-- LINK TO BOOTSTRAP's CSS -->
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- LINK TO BOOTSTRAP's JS -->
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<!-- LINK TO MY CSS -->
+	<link rel="stylesheet" type="text/css" href="page.css">
+
+	<!-- LINK TO MY JS -->
+	<script type="text/javascript" src="page.js"></script>
+</head>
+<body>
+	<div id="container">
+
+		<h1>Welcome to the image bouncer selector</h1>		
+		<div class="row">
+			<div class="col-md-4"></div>
+			<canvas class="col-md-4" id="canvas"></canvas>
+			<div class="col-md-4"></div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<input id="image-url" placeholder="Image url"/>
+				<button id="change-image">Change image</button>
+			</div>
+		</div>
+		<div>
+			<table>
+				<tr><th colspan="3">History of images used</th></tr>
+				<tr>
+					<th>Image</th>
+					<th>Image source</th>
+					<th>Time added</th>
+				</tr>
+				
+			</table>
+		</div>
+	</div>
+</body>
