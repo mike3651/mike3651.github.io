@@ -7,7 +7,11 @@ body {
 	background-color: #fff;
 }
 
-td, tr, th {
+table {
+	background-color: lightgrey;	
+}
+
+td, tr, th {	
 	border: 1px solid black;
 	padding: 4px;
 }
@@ -50,6 +54,8 @@ td, tr, th {
 }
 
 .project-image {
+	height: 100px;
+	width: 100px;
 	border: 2px solid grey;
 	box-shadow: 2px 2px grey;
 }
