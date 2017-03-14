@@ -43,6 +43,8 @@
 			getMessages();
 		});	
 
+		$("#get-locations").click(getLocations);
+
 		// shopInformation();
 		// reviewInformation();
 	}
@@ -96,15 +98,16 @@
 
 			//getInformation(this.id);
 			//console.log("form submitted");	
-			updateDeletes();
+			updateMods();
 		});
 	}
 
 	// updates the elements that can be deleted
-	function updateDeletes(){
+	function updateMods(){		
 		var temp_list = document.getElementsByClassName("removeable");
-		for(var i =0; i < temp_list.length; i++) {
-			temp_list[i].onclick = deleteMe;
+		for(var i =0; i < temp_list.length; i++) {	
+			(temp_list[i]).click(editMe);		
+			$(temp_list[i]).dblclick(deleteMe);
 		}
 	}
 
@@ -195,54 +198,60 @@
 	}
 
 	// function that extracts information from the form field
-	function getInformation(form_type) {	
-		var object = {};
-				
+	function getLocations() {	
+	
 		
-		$("form :input").each(function() {
-			var title = $(this).attr("title");		
-			var input = $(this).val();	
-			if(typeof title !== "undefined") {
-				object[title] = input;
-			}
-		});
-
-		if(form_type == "shop") {
-			JSON_OBJECTS_SHOPS.push(object);
-		} else if (form_type == "user") {
-			JSON_OBJECTS_USERS.push(object);
-		}
-
-
-		if(form_type == "user") {	
-			// for the geo location using google's api
-			
-			if(!container_made) {
+		//alert(JSON_OBJECTS_SHOPS.length);
+		for(var i = 0; JSON_OBJECTS_SHOPS.length; i++) {
+			//alert(JSON_OBJECTS_SHOPS.length);
+			if(JSON_OBJECTS_SHOPS[i].length)
+			{
 				// create the container object
 				var container = document.createElement("div");
-				container.innerHTML = object["Name"];
+				container.innerHTML = JSON_OBJECTS_SHOPS[i]["name"];
 				container.className = "shop col-sm-4";
 				container.id = "business" + JSON_OBJECTS_SHOPS.length;
-			}
-
-			// create the map object
-			var map = document.createElement("div");			
-			map.id = "mapid" + JSON_OBJECTS_SHOPS.length;		
-	 
-			$("#business" + JSON_OBJECTS_SHOPS.length).append(map);
-			$("#test").append(container);	
-			alert(JSON_OBJECTS_SHOPS.length);
-			for(var i = 0; JSON_OBJECTS_SHOPS.length; i++) {
+			
+				// create the map object
+				var map = document.createElement("div");			
+				map.id = "mapid" + i;	
+				$(container).append(map);
+				$("#maps").append(container);
 				// THIS IS THE SWEET STUFF
 				var ajax = new XMLHttpRequest();
-				ajax.onload = createMap;
+				ajax.onload = function(){createMap(i)};
 				ajax.open("GET", "http://maps.googleapis.com/maps/api/geocode/json?address=" 
-					+ JSON_OBJECTS_SHOPS[i]["ZIP code"]+ "&sensor=true", false);
-				ajax.send();	
-			}
-		}
-				
+					+ JSON_OBJECTS_SHOPS[i]["zip"]+ "&sensor=true", false);
+				ajax.send();
+			}	
+		}		
 	}
+
+		// validates information from the json object
+	function createMap(i) {
+		//alert(i);			
+		var data = JSON.parse(this.responseText);
+		// console.log(data);
+
+		// get the locations		
+		var lat = data["results"][0].geometry.bounds.northeast["lat"];
+		var lng = data["results"][0].geometry.bounds.northeast["lng"];
+		//console.log($("#mapid" + i));
+		// stylistics of the map
+		if($("#mapid" + i).length) {
+			var myMap = L.map("mapid" + i).setView([lat, lng], 13);
+			L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+	 	    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+			}).addTo(myMap);
+
+			// adds a marker to the map
+			var marker = L.marker([lat, lng]).addTo(myMap);		
+			$("#mapid" + i).append(myMap);	
+			// map_okay = true;
+			// console.log("map status: " + map_okay);	
+		}		
+	}
+
 
 	function getShops() {	
 		//alert("here");			
@@ -276,30 +285,12 @@
 		}
 	}
 
+	// allows for editing 
+	function editMe() {
+		$(this).children().innerHTML = "LOL";
+	}
+
 	function deleteMe() {
 		$(this).remove();
 	}
-
-	// validates information from the json object
-	function createMap() {				
-		var data = JSON.parse(this.responseText);
-		// console.log(data);
-
-		// get the locations		
-		var lat = data["results"][0].geometry.bounds.northeast["lat"];
-		var lng = data["results"][0].geometry.bounds.northeast["lng"];
-		console.log($("#mapid" + JSON_OBJECTS_SHOPS.length));
-		// stylistics of the map
-		var myMap = L.map("mapid" + JSON_OBJECTS_SHOPS.length).setView([lat, lng], 13);
-		L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
- 	    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-		}).addTo(myMap);
-
-		// adds a marker to the map
-		var marker = L.marker([lat, lng]).addTo(myMap);		
-		$("#mapid" + JSON_OBJECTS_SHOPS.length).append(myMap);	
-		// map_okay = true;
-		// console.log("map status: " + map_okay);	
-	}
-
 })();
