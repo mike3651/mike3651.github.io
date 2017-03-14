@@ -20,6 +20,13 @@
 			"open",
 			"close"];
 
+	var REVIEW_TABLE_TITLES = [
+			"id",
+			"shopid",
+			"message",
+			"rating" 
+	];
+
 	// checks to see if we can generate a map
 	var map_okay = true;
 	var container_made = false;
@@ -47,13 +54,14 @@
 		//alert($("form"));
 				
 		// need this alert to allow for load pause
-		alert($(this).attr("title") + " page loaded");
+		// alert($(this).attr("title") + " page loaded");
 
 		// LOAD THE IDs
-		// alert($(this).attr("title") == "review");
+		alert($(this).attr("title") == "review");
 		// check for review
 		if($(this).attr("title") == "review") {
-			$("#review-id").val(createId($(this).attr("title")));
+			//$("#review-id").val(createId($(this).attr("title")));
+			$("#get-review-data").click(getReviews);
 			//alert($("#review-id").val());
 		}
 
@@ -63,9 +71,8 @@
 			// console.log("actual id returned: " + id);
 			// console.log("shop-id value before: " + $("#shop-id").val());
 			// console.log("shop input object: " + $("#shop-id"));
-			document.getElementById("shop-id").value = id;
-			$("#get-shop-data").click(getShops);
-			$("#delete-shop").click(deleteShop);
+			//document.getElementById("shop-id").value = id;			
+			$("#get-shop-data").click(getShops);			
 			//$("#shop-id").val(id);			
 			//console.log("shop-id value after: " + $("#shop-id").val());
 			//alert($("#shop-id").val());
@@ -74,12 +81,13 @@
 		$("form").submit(function(e) {
 			e.preventDefault();
 			if($("form").attr("id") == "shop"){
-				//alert("shop submission");
+				alert("shop submitted");
 				makeShopObject();
 			}
 
 			if($("form").attr("id") == "review") {
-				//alert("review submitted");
+				alert("review submitted");
+				makeReviewObject();			
 			}
 
 			if($("form").attr("id") == "user") {
@@ -88,8 +96,18 @@
 
 			//getInformation(this.id);
 			//console.log("form submitted");	
+			updateDeletes();
 		});
 	}
+
+	// updates the elements that can be deleted
+	function updateDeletes(){
+		var temp_list = document.getElementsByClassName("removeable");
+		for(var i =0; i < temp_list.length; i++) {
+			temp_list[i].onclick = deleteMe;
+		}
+	}
+
 
 	// function that generates an ID
 	// param -> type : The type of object to link the id to
@@ -171,7 +189,7 @@
 			"shopid": shop_id.value,
 			"message": message.value,
 			"rating": rating.value
-		}
+		};
 		JSON_OBJECTS_REVIEWS.push(review);
 		return review;
 	}
@@ -226,25 +244,40 @@
 				
 	}
 
-	function getShops() {				
+	function getShops() {	
+		//alert("here");			
 		for(var i = 0; i < JSON_OBJECTS_SHOPS.length; i++) {
 			var tr = document.createElement("tr");
+			tr.className = "removeable";
 			for(var j = 0; j < SHOP_TABLE_TITLES.length; j++) {
-				var th = document.createElement("th");
-				th.innerHTML = JSON_OBJECTS_SHOPS[i][SHOP_TABLE_TITLES[j]];
-				th.id = JSON_OBJECTS_SHOPS["id"];
-				console.log(th.id);
-				$(tr).append(th);				
+				var td = document.createElement("td");				
+				td.innerHTML = JSON_OBJECTS_SHOPS[i][SHOP_TABLE_TITLES[j]];
+				td.id = JSON_OBJECTS_SHOPS["id"];
+				
+				$(tr).append(td);				
 			}
-			$("table").append(tr);
-			alert("here");
+			$("#shop-table").append(tr);
+			// alert("here");
 		}
 	}
 
-	function deleteShop() {
-		alert("here");	
-		alert($("#shop-id").val());	
-		$($("#shop-id").val()).remove();
+	function getReviews() {						
+		for(var i = 0; i < JSON_OBJECTS_REVIEWS.length; i++) {
+			var tr = document.createElement("tr");
+			tr.className = "removeable";
+			for(var j = 0; j < REVIEW_TABLE_TITLES.length; j++) {
+				var td = document.createElement("td");
+				td.className = "removeable";
+				td.innerHTML = JSON_OBJECTS_REVIEWS[i][REVIEW_TABLE_TITLES[j]];						
+				$(tr).append(td);				
+			}
+			$("#review-table").append(tr);
+			// alert("appended to the table")			
+		}
+	}
+
+	function deleteMe() {
+		$(this).remove();
 	}
 
 	// validates information from the json object
