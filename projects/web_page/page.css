@@ -1,0 +1,33 @@
+body {
+	/*background-image: url("img/background.jpg");*/
+	margin: auto;
+}
+
+h1, h3{
+	text-align: center;
+}
+
+a:hover {
+	cursor: pointer;
+}
+
+div[id^="business"] {
+	display: inline-block;
+}
+
+div[id^="mapid"] {		
+	height: 180px;
+	width: 180px;
+}
+
+table, th, td {
+	border: 1px solid black;
+}
+
+th {
+	text-align: left;
+}
+
+th, td {
+	padding: 15px;
+}
