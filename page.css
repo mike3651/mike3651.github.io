@@ -97,12 +97,3 @@ table, .project-image {
 h4 {
 	text-decoration: underline;
 }
-
-#canvas, #various-controls {
-	position: fixed;	
-}
-
-#various-controls {
-	bottom: 0;
-	left: 0;
-}

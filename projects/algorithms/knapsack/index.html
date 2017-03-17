@@ -1,0 +1,101 @@
+<!--
+	My HTML file
+	Michael Wilson
+-->
+
+<!DOCTYPE html>
+<head>
+
+	<!-- JQUERY CDN -->
+	<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+
+	<!-- BOOSTRAP CDN -->
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<!-- MY CSS -->
+	<link rel="stylesheet" type="text/css" href="page.css">
+
+	<!-- MY JS -->
+	<script type="text/javascript" src="page.js"></script>
+	<title>Knapsack</title>
+</head>
+<body>
+	<h1>0-1 Knapsack Algorithm</h1>
+	<div id="controls" class="container">
+		<div class="row">
+			<h3>How to use this program</h3>
+			<ul>
+				<li>First, enter a list of weights </li>
+				<li>Second, enter a list of values, corresponding to those weights </li>
+				<li>Third, enter a number which will represent the capacity of a bag to hold the items</li>
+				<li>Finally, either run through the algorithm by clicking the play button or step through the algorithm with the forward and backward buttons</li>
+			</ul>
+		</div>
+		<div class="row">
+			<input id="weights" size="35" type="text" placeholder="Enter a list of weights separated by ','"/> Weights<br/>
+			<input id="costs" size="35" type="text" placeholder="Enter a list of costs separated by ','"/> Values<br/>
+			<input id="capacity" size="35" type="number" placeholder="Enter a max capacity"/> Capacity<br/>
+			<button id="play"><span class="glyphicon glyphicon-play"></span> Run algorithm</button>
+		</div>
+		<div class="row">
+			<button id="back"><span class="glyphicon glyphicon-step-backward"></span> Step back</button>
+			<button id="forward">Step forward <span class="glyphicon glyphicon-step-forward"></span></button>
+		</div>
+	</div>
+	<div id="visual">
+		<div id="results" class="row">
+			<div class="col-md-4" id="weights-array"></div>
+			<div class="col-md-4" id="costs-array"></div>
+			<div class="col-md-4" id="result"></div>
+		</div>
+		<div id="step-through">
+			<div id="array"></div>
+		</div>
+	</div>
+	<div id="information" class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<h3>The facts</h3>
+				<ul>
+					<li>Purpose: maximize value that can be attained with certain restrictions</li>
+					<li>Space Complexity: O(nW)</li>
+					<li>Time Complexity: O(nW)</li>
+				</ul>
+			</div>
+			<div class="col-md-6">
+				<h3>Formal Definiton</h3>
+				<p>Input: W[1...n] where W is the weights of the items, V[1...n] where V is the value of each item, C which represents the max capacity of the sack. W<sub>i</sub>, V<sub>i</sub>, C, n &isin; &#8477;
+				</p>
+				<p>Output: MAX, where MAX is the most value that can be placed in the knapsack &amp; MAX &isin; &#8477;, MAX &ge; 0</p>
+			</div>
+		</div>
+		<div class="row">
+			<h3>Psuedocode</h3>
+<pre>
+Knapsack(W[1...n], V[1...n], C):
+	Create a new nxn array called knap  	
+
+	for i from 0 to C:
+		set knap[0][i] to 0
+
+	for i from 1 to n:
+		for j from 0 to C:	
+
+			// check to see if the weight is too large
+			if W[i] > j:
+				knap[i][j] = knap[i - 1][j]
+
+			// take the maximum of the previous item and add the value of the current item to it
+			else:
+				knap[i][j] = max(knap[i - 1][j], V[i] +  knap[i - 1][j - W[i]])
+
+	return knap[n][C]
+
+
+Note: Special thanks to GeeksforGeeks &amp; Wikipedia
+</pre>
+		</div>
+	</div>
+</body>
+</html>

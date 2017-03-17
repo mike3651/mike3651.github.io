@@ -1,0 +1,18 @@
+/* My CSS file
+ * 
+ * Michael Wilson */
+
+h1 {
+	text-align: center;
+}
+
+#visual {
+	width: 100%;
+	height: 500px;
+	border: solid 1px black;
+}
+
+#results {
+	border-bottom: 1px solid black;
+}
+
