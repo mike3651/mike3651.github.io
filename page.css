@@ -45,8 +45,8 @@ table, .project-image {
 /* General styling for the images with the logo class */
 .logo, .logo-modern {
 	margin: 25px;
-	height: 200px;
-	width: 200px;
+	height: 100px;
+	width: 100px;
 	/*margin-bottom: 25px;*/
 }
 
@@ -95,7 +95,7 @@ h4 {
 	width: 50px;
 }
 
-h3 {
+.languages {
 	margin-bottom: 10px;
 	margin-top: 10px;
 }
