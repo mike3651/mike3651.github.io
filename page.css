@@ -97,3 +97,9 @@ table, .project-image {
 h4 {
 	text-decoration: underline;
 }
+
+/* Styling for icon type images */
+.icon {
+	height: 50px;
+	width: 50px;
+}
