@@ -1,0 +1,23 @@
+Michael Wilson 
+
+1) For the following algorithms, what is the run time and why?
+	a) kadane
+	b) knapsack
+	c) rod cutting problem
+
+2) For the following algorithms, what is the space complexity and why?
+	a) kadane
+	b) knapsack
+	c) rod cutting problem
+
+3) What is a dynamic problem?
+
+4) Describe the following algorithms in terms of what they are trying to accomplish.
+	a) kadane
+	b) knapsack
+	c) rod cutting problem
+
+5) Write the psuedocode for the following algorithms
+	a) kadane
+	b) knapsack
+	c) rod cutting problem

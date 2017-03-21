@@ -1,0 +1,25 @@
+Michael Wilson 
+
+1) For the following algorithms, what is the run time and why?
+	a) traveling salesman
+	b) bin packing	
+
+2) For the following algorithms, what is the space complexity and why?
+	a) traveling salesman
+	b) bin packing
+
+3) Describe the following algorithms in terms of what they are trying to accomplish.
+	a) traveling salesman
+	b) bin packing
+
+4) Write the psuedocode for the following algorithms
+	a) traveling salesman
+	b) bin packing
+
+5) What is a hamiltonian path?
+
+6) What is a hamiltonian cycle?
+
+7) What is a euler path?
+
+8) What is a euler cycle?
