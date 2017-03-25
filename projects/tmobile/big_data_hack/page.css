@@ -1,0 +1,32 @@
+.block {
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	box-shadow: lightgrey 10px 10px
+}
+
+#inject {
+	margin-top: 80px;
+}
+
+#map-container {
+	height: 100%; width: 100%;	
+}
+#map {
+	height: 50%; width: 50%;
+	margin: auto;
+}
+
+h1 {
+	text-align: center;
+}
+
+body {
+	font-family: monospace;
+	padding: 25px;
+} 
+
+/* Styling for hovering over the links */
+a:hover {
+	cursor: pointer;
+}
