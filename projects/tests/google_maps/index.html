@@ -39,8 +39,8 @@
 							<li class="category" ><a>Park</a></li>							
 						</ul>
 					</li>					
-					<li class="menu-item" value="directions"><a>Directions</a></li>
-					<li class="menu-item"><a>History</a></li>
+					<li class="menu-item" value="directions"><a href="#distance-section">Directions</a></li>
+					<li class="menu-item"><a href="#history-section">History</a></li>
 				</ul>
 				<form class="navbar-form navbar-left" id="search">
 					<div class="input-group">
@@ -100,26 +100,26 @@
 		</div>
 
 	<div class="container" id="history-section">
-			<div class="row">
-				<div id="history" class="col-md-12">
-					<h2>Here you can see your browsing history</h2>
-					<div class="row">
-						<div class="col-md-8">	
-							<table id="history-table">
-								<tr>
-									<th>Source</th>				
-									<th>Destination</th>
-									<th>Travel style</th>
-								</tr>
-							</table>
-						</div>
-						<div id="history-options" class="col-md-4">
-							<button id="clear-history">Clear history</button>
-						</div>
+		<div class="row">
+			<div id="history" class="col-md-12">
+				<h2>Here you can see your browsing history</h2>
+				<div class="row">
+					<div class="col-md-8">	
+						<table id="history-table">
+							<tr>
+								<th>Source</th>				
+								<th>Destination</th>
+								<th>Travel style</th>
+							</tr>
+						</table>
 					</div>
-				</div>				
-			</div>
+					<div id="history-options" class="col-md-4">
+						<button id="clear-history">Clear history</button>
+					</div>
+				</div>
+			</div>				
 		</div>
+	</div>
 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADcFwwr_9DWATUQ4DRm7TFhFN0EsLZ3zk&libraries=places&callback=initMap"></script>
 </body>
 </html>
