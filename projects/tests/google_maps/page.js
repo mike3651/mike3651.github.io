@@ -105,10 +105,10 @@ function setUpDirections() {
 			updateMap(directionsService, directionsDisplay, current_mode);
 			populateVenues();
 		});
-		$("#category").change(function() {			
-			current_mode = $("#category").val();
-			populateVenues();
-		});
+		// $("#category").change(function() {			
+		// 	current_mode = $("#category").val();
+		// 	populateVenues();
+		// });
 		$("#category-search").click(function() {			
 			current_mode = $("#category").val();
 			populateVenues();
