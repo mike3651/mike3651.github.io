@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<head>
+	<title></title>
+
+	<!-- LINK TO JQUERY -->
+	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
+	<!-- LINK TO BOOTSTRAP CSS -->
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- LINK TO BOOTSTRAP JS -->
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="page.css">
+	<script type="text/javascript" src="page.js"></script>
+</head>
+<body>
+	<!-- NAVIGATION BAR AT THE TOP -->
+	<div class="navbar navbar-inverse navbar-fixed-top" id="navbar">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<div class="navbar-brand">
+					THack 2017
+				</div>				
+			</div>	
+			<div id="menu" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li class="dropdown menu-item" value="search_results" >						
+						<a class="dropdown-toggle" data-toggle="dropdown">Category<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li class="category"><a >Gym</a></li>
+							<li class="category"><a>Resturant</a></li>
+							<li class="category"><a>Movie</a></li>
+							<li class="category" ><a>Park</a></li>							
+						</ul>
+					</li>					
+					<li class="menu-item" value="directions"><a>Directions</a></li>
+					<li class="menu-item"><a>History</a></li>
+				</ul>
+				<form class="navbar-form navbar-left" id="search">
+					<div class="input-group">
+						<input id="search-query" size="35" placeholder="search by name..." type="text"/>
+							<button class="btn btn-defualt" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+						</div>
+					</div>
+				</form>	
+			</div>				
+		</div>		
+	</div>
+	<div id="body">
+		<h1>Why wait?</h1>				
+		<div class="container" id="category-section">
+			<div class="row">
+				<div class="col-md-12">
+					<h2>Search venues by category</h2>
+					<select id="category">
+						<option value="food">Restaurant</option>
+						<option value="clothing_store">Clothes</option>
+					</select><button id="category-search">Search</button>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<h3>List of nearby venues</h3>
+					<table id="venues">								
+					</table>
+				</div>
+				<div class="col-md-6" id="store-data"></div>
+			</div>		
+		</div>
+	</div>
+	<div class="container" id="distance-section">	
+			<div id="services" class="row">
+				<div class="col-md-6">
+					<h2>Search by distance</h2>
+					START <input id="start" placeholder="city, state" size="35" disabled/><br/>
+					END <input id="end" placeholder="city, state" size="35"/><br/>	
+					<select id="mode">
+						<option value="DRIVING">Driving</option>
+						<option value="WALKING">Walking</option>
+						<option value="BICYCLING">Bicycling</option>
+						<option value="TRANSIT">Transit</option>
+					</select>
+					<button id="get-route">Start Route!</button>
+				</div>
+				<div class="col-md-6">			
+				</div>
+			</div>
+			<div id="map-container" class="container">
+				<div class="row">
+					<div id="right-panel" class="col-md-6"></div>
+					<div id="map" class="col-md-6"></div>
+				</div>
+			</div>
+		</div>
+
+	<div class="container" id="history-section">
+			<div class="row">
+				<div id="history" class="col-md-12">
+					<h2>Here you can see your browsing history</h2>
+					<div class="row">
+						<div class="col-md-8">	
+							<table id="history-table">
+								<tr>
+									<th>Source</th>				
+									<th>Destination</th>
+									<th>Travel style</th>
+								</tr>
+							</table>
+						</div>
+						<div id="history-options" class="col-md-4">
+							<button id="clear-history">Clear history</button>
+						</div>
+					</div>
+				</div>				
+			</div>
+		</div>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADcFwwr_9DWATUQ4DRm7TFhFN0EsLZ3zk&libraries=places&callback=initMap"></script>
+</body>
+</html>

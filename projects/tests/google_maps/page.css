@@ -1,0 +1,48 @@
+body {	
+	font-family: monospace;
+	margin: auto;
+	padding: 5px;
+}
+
+h1 {
+	text-align: center;
+	font-style: italic;
+}
+
+#navbar {
+	position:fixed;
+}
+
+#body {
+	margin-top: 80px;
+}
+
+ul {
+	list-style-type: none;
+}
+
+#map-container{	
+	height: 500px; width: 100%;
+	overflow: scroll;
+}
+
+#right-panel, #map, .row{
+	height: 100%;
+}
+
+td, th, tr{
+	border: solid 1px black;
+	padding: 5px;
+}
+
+table {
+	right: 0;
+}
+
+/* styling for the clickable items */
+.data-on-store:hover, a:hover {
+	background-color: lightgrey;
+	cursor: pointer;
+}
+
+/* styling for the information field */
