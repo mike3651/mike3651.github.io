@@ -160,7 +160,7 @@ function setUpDirections() {
 		// alert("populating the venues, current mode: " + current_mode);
 		services.nearbySearch({
 			location: current,
-			radius: 500,
+			radius: 1000,
 			type: [current_mode]
 		}, callback);	
 		setTimeout(populate(), 2000);	
