@@ -1,0 +1,12 @@
+/*
+ * Michael Wilson
+ */
+
+#type-area {
+	height: 500px;
+	width: 100%;
+	font-size: 56px;
+	line-height: 500px;
+	color: black;
+	text-align: center;
+}

@@ -1,0 +1,16 @@
+/* My personal styling sheet */
+li:hover {
+	background-color: lightgrey;
+}
+
+h1 {
+	text-align: center;
+}
+
+#derivative {
+	text-align: center;
+	font-size: 36px;
+	height: 500px;
+	border: 1px solid black;
+	line-height: 500px;
+}

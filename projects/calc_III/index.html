@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<head>
+	<!-- JQUERY CDN -->
+	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
+	<!-- LINK TO BOOTSTRAP CSS -->
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">	
+
+	<!-- LINK TO BOOTSTRAP JS -->
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<!-- LINK TO MY CSS -->
+	<link rel="stylesheet" type="text/css" href="index.css">
+
+	<!-- LINK TO MY JS FILES -->
+	<script type="text/javascript" src="w1.js"></script>
+	<script type="text/javascript" src="review.js"></script>
+
+	<title>Calc III</title>
+</head>
+<body>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">Calc III</a>
+			</div>
+			<ul class="nav navbar-nav">
+				<li><a href="#sequences">Sequences</a></li>
+				<li><a href="#partial-sum">Partial sums, series, convergence</a></li>
+				<li><a href="#review">Calculus review</a></li>
+			</ul>
+		</div>		
+	</nav>
+
+	<h1>Welcome to my calculus III page, I hope that it helps you with studying!</h1>
+
+	<!-- SECTION THAT DEALS WITH SEQUENCES -->
+	<div class="container" id="sequences">
+		<h2>Sequences</h2>
+		<!-- definition -->		
+		<p>
+			A sequence is a collection of objects in which ordering matters.
+			Typically a sequnce is denoted with such as a<sub>n</sub> where n refers to 
+			the nth number in the sequence 'a'.			
+		</p>
+		<p>An example: a = {1, 2, 3, 4}, a<sub>3</sub> = 4</p>
+
+		<h3>Check out some of the following sequences</h3>
+		<p>Input a table size <button id="change-sequence-size">Commit change</button></p>
+		<input id="sequence-size" size="55" placeholder="please enter a number" type="number"/>
+
+
+		<h3>Factorial sequence</h3>
+		<table class="table" id="factorial"></table>
+
+		<h3>Fibonacci sequence</h3>
+		<table class="table" id="fib"></table>
+
+	</div>
+	<!-- SECTION THAT DEALS WITH PARTIAL SUMS/SERIES/CONVERGENCE -->
+	<div class="container" id="partial-sum"></div>
+
+	<!-- JUST MY SIMPLE REVIEW SECTION -->
+	<div class="container" id="review">
+		<div class=row>
+			<div class="col-md-12" id="derivative">
+			</div>
+		</div>
+	</div>
+</body>
+</html>
