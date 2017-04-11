@@ -53,10 +53,23 @@ table, .project-image {
 	/*margin-bottom: 25px;*/
 }
 
+/* styling for various project images */
+.project-image, .endeavor-image {
+	border: 2px solid grey;
+}
+
 .project-image {
 	height: 100px;
-	width: 100px;
-	border: 2px solid grey;
+	width: 100px;	
+}
+
+#endeavor-updates {
+	text-align: center;
+}
+
+.endeavor-image {	
+	height: 250px;
+	width: 75%;
 }
 
 a > img:hover {
