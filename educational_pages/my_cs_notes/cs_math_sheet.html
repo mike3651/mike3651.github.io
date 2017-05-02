@@ -1,0 +1,57 @@
+<h2>Exponents</h2>
+<ul>
+	<li class="external">\(x^a * x^b = x^{a + b}\)</li>
+	<li class="external">\(\frac{x^a}{x^b} = x^{a - b}\)</li>
+	<li class="external">\((x^a)^b = x^{ab}\)</li>
+	<li class="external">\(x^n + x^n = 2x^n\)
+	</li>
+	<li class="external">\(2^n + 2^n = 2^{n + 1}\)</li>
+</ul>
+
+<h2>Logarithms</h2>
+<ul>
+	<li class="external">\(x^a = b \Leftrightarrow \lg_xb = a\)</li>
+	<li class="external">\(\lg_aB = \frac{\lg_cB}{\lg_cA} \hspace{0.25cm}where\hspace{0.25cm} A,B,c \in \mathbb{Z^+}\)</li>
+	<p class="proof">Proof:</p>
+	<ul>
+		<li class="external">\(x = \lg_cB,\hspace{0.25cm} y = \lg_cA,\hspace{0.25cm} z = \lg_aB\)</li>
+		<li class="external">\(c^x = b,\hspace{0.25cm} c^y = a,\hspace{0.25cm} a^z = b\)</li>
+		<li class="external">\(c^x = b = a^z = (c^y)^z = c^{yz}\)</li>		
+		<li class="external">\(\rightarrow x = yz \rightarrow z = \frac{x}{y} = \frac{\lg_caA}{lg_cB}\)</li>
+	</ul><br>
+	<li class="external">\(
+		\lg_nAB = \lg_nA + \lg_nB
+		\)</li>
+	<p class="proof">Proof:</p>
+	<ul>
+		<li class="external">\(x = \lg_nA,\hspace{0.25cm} y = \lg_nB,\hspace{0.25cm}z = \lg_nAB\)</li>
+		<li class="external">\(n^x =  A,\hspace{0.25cm}n^y = B,\hspace{0.25cm}n^z = AB\)</li>
+		<li class="external">\(AB = n^xn^y = n^{x + y} \rightarrow z = x + y = \lg_nA + \lg_nB\)</li>
+	</ul><br>
+	<li class="external">\(\lg_n(\frac{A}{B}) = \lg_nA - \lg_nB)\)</li>
+	<li class="external">\(\lg_n(A^B) = B\lg_nA\)</li>
+	<li class="external">\(\lg_nX < X\hspace{0.25cm}\bigvee X > 0\)</li>
+	<li class="external">\(\lg_n1 = 0\)</li>
+</ul>
+
+<h2>Series</h2>
+<ul>
+	<li class="external">$$\sum_{i=0}^{N}2^i = 2^{N+1}-1$$</li>
+	<li class="external">$$\sum_{i=0}^{N}a^i = \frac{a^{N+1} - 1}{a-1}$$</li>
+	<li class="external">$$\sum_{i=0}^{N}a^i = \frac{1}{1-a},\hspace{0.25cm}0 < a < 1$$</li>
+	<li class="external">$$\sum_{i=1}^{N}i = \frac{N*(N + 1)}{2}$$</li>
+	<li class="external">$$\sum_{i=1}^{N}i^2 = \frac{N*(N+1)*(2N+1)}{6}$$</li>
+	<li class="external">$$\sum_{i=1}^{N}i^k = \frac{N^{k+1}}{|k+1|}$$</li>
+</ul>
+
+<h2>Modular Arithmetic</h2>
+	<p>A is congruent to B modulo N {A &Congruent; B % N} if N divides A - B</p>
+	<p>If N is a prime number the following must follow: </p>
+	<ol>
+		<li class="external">AB &Congruent; 0 % N &iff; A &Congruent; 0 % N or B &Congruent; 0 % N</li>
+			<ul>
+				<li class="external">If N divides a product of two numbers, it divides at least one of the two numbers</li>
+			</ul>
+		<li class="external">AX &Congruent; 1 % N has a unique solution &forall;a in range(0 : N)</li>
+		<li class="external">x<sup>2</sup> &Congruent; A mod N has either two solutions &forall;a in range(0 : N) or no solutions</li>
+	</ol>

@@ -1,0 +1,40 @@
+<h1 class="align-center">Proofs</h1>
+<p>Theorems are fantastic in terms of helping us all solve simple to complex problems that we may encounter in life. But how do we know these theorems hold? Are they true 100% of the time? Well to answer these questions we must delve further and disect the proofs to these theorems.</p>
+
+<h2>Proof by induction</h2>
+<p>This proof is broken into the following three parts:</p>
+<ul>
+	<li class="external">Base Case: True for all small values</li>
+	<li class="external">Inductive hypothesis: Assumption that the theorem is true for all values up to an arbirtary one {K}</li>
+	<li class="external">Inductive step: Applying what we know, from the base case and the inductive step, to prove that the theorem holds for the next case of K + 1</li>
+</ul>
+
+<p>Let's take a look at an example of this proof, shall we?</p>
+
+<!-- FIBONACCI PROOF -->
+<h3>Fibonacci</h3>
+<p>The fibonacci problem fairly straigh foward. The nth number in fibonacci sequence happens to be equivalent to the addition of the previous fibonacci number and its previous number. What do I mean by that? Well it just happens to look like this in function lingo:</p>
+<p class="indent">\(F_n(x) = F_{n-1}(x) + F_{n-2}(x)\), where x happens to be the arbitrary number that we are looking at.</p>
+<p>In lamence terms the Nth fibonacci number is:</p> 
+<p class="indent">\(F_n = F_{n-1} + F_{n-2}\)</p>
+<p>Now that we have the general idea of how fibonacci numbers are calculated let's prove that \(F_i\) is always going to be strictly less than \((\frac{5}{3})^i\) Let's take a look at the base case, for this sequence we happen to have two such cases:</p>
+<p class="indent">\(F_1 = 1\) and \(F_2 = 2\)</p>
+<p>From here it's pretty easy to see \(F_1 = 1 = \frac{3}{3}\) &lt; \((\frac{5}{3})^1 = \frac{5}{3}\) and \(F_1 = 2 = \frac{18}{9}\) &lt; \((\frac{5}{3})^2 = \frac{25}{9}\)</p>
+<p>Now that we have that under our belt, lets take a look at our inductive hypothesis:</p>
+<p class="indent">\(F_k < (\frac{5}{3})^k\)</p>
+<p>Remember, we are assuming that this statement is true!<br>Given all of the facts, let's tackle this proof!</p>
+<ul>
+	<li class="external">\(F_{k+1} < (\frac{5}{3})^{k+1}\)</li>
+	<li class="external">\(F_{k+1} = F_k + F_{k-1}\)</li>
+	<li class="external">\(< \frac{3}{5} * (\frac{5}{3})^{k+1} + (\frac{3}{5})^2 * (\frac{5}{3})^{k+1}\)</li>
+	<li class="external">\(= \frac{15}{25} * (\frac{5}{3})^{k+1} + \frac{9}{25} * (\frac{5}{3})^{k+1}\)</li>
+	<li class="external">\(= (\frac{5}{3})^{k+1} * (\frac{15}{25} + \frac{9}{25})\)</li>
+	<li class="external">\(= (\frac{5}{3})^{k+1} * \frac{24}{25}\)</li>
+	<li class="external">\(< (\frac{5}{3})^{k+1}\)</li>
+</ul>
+
+<h2>Proof by counterexample</h2>
+<p>This proof is pretty straight forward, all you need to do is to find an example to attempt to prove that theorem is false, if you can't find one then the theorem holds, if you can swiftly find one then you just broke a weak theorem.</p>
+
+<h2>Proof by contradiction</h2>
+<p>In this theorem you assume that the theorem is false. In this proof you attempt to show why the theorem is false but you eventually end up in a situation where something is not possible {contradiction} and thus you have proven some instance of correctness for the given theorem.</p>

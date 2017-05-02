@@ -1,0 +1,67 @@
+/* Styling sheet for the main page 
+ * Michael Wilson */
+body {
+	background:black;
+	position: relative;
+	color: white;
+	font-family: 'Poiret One'
+}
+
+.align-center, #top-headbar{
+	text-align: center;
+}
+
+.button:hover{
+	background-color: hotpink;
+}
+
+#top-headbar {	
+	position: absolute;
+	margin: auto;		
+	top:0;
+}
+
+#main-content{	
+	padding-top: 20px;
+}
+
+.link {		
+	margin-left: 1em;
+	margin-right:1em;
+	transition: border-bottom linear 0.07s;
+}
+
+.link:hover {
+	border-bottom: 3px solid orange;
+	cursor: pointer;
+}
+
+ul {		
+	width: 100%;
+	/*text-align: center;	*/
+	list-style-type: none;
+}
+
+li:not(.external) {
+	display:inline-block;
+}
+
+h2, h3 {
+	color:orange;
+}
+
+.proof {
+	margin-top: 0;
+	margin-bottom: 0;
+	font-style: italic;
+	color: hotpink;
+}
+
+.external {
+	margin-top:5px;
+	margin-bottom:5px;
+}
+
+.indent {
+	text-indent: 25px;
+}
