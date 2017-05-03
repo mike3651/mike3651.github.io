@@ -1,0 +1,50 @@
+<h1 class="align-center">Generics</h1>
+<h2>Introduction to generics</h2>
+<p>Let's talk about generics. What exactly does it mean to be generic? To be generic means that one doesn't 
+really stick out from the crowd. The official definition is: Something which is generic is one which belongs to a group. So what do generics have to do with programming? Let's say that we have come up with a sorting alogiorhtm which runs in \(\Theta(\lg_2(n))\) time. It's a swift and nearly fool proof algorithm that puts us in the running for a noble prize! There's just one slight issue, our algorithm only works on integers! ):
+</p>
+<p>
+So how can we make it so that our algorithm works on other data types? That's right! Generics. If our algorithm becomes generic then we can sort not just integers, but objects as well! Here's what the method signature will look like:<br>
+<span class="indent">Generic [] ultimateSort(Object [])</span>
+</p>
+<p>Let's take a look at a programming example, in psuedoCode that uses generics and let's break it down together!</p>
+<pre>
+<code>
+Class Generic:
+	private Object value
+	Object getValue():
+		return value
+	overwrite(Object)
+		value = Object
+
+Class Test:
+	main():
+		Create Generic g
+		g.overwrite(some generic)
+		val = convert g.getValue() to a string
+		print val
+</code>
+</pre>
+<p>Let's take a look at main. The first thing that we do is we create an object from our generic class. The next step is calling the objects overwrite method, which accepts a random generic object as a parameter. This method stores the generic object as a property in our object. The next step is to use type casting to convert our objects one property to a string which we then decide to print out.</p>
+
+<h2>Wrappers &amp; Generics</h2>
+<p>Now that we have a basic understanding of generics and have seen an example of generics in action let's talk about wappers. What is a wrapper. A wrapper is class that is used to represent primitive data types. These wrapper objects that we create are immutable. How could we change our program above to use wrappers? Well turns out it's not all that difficult, we recognize that the overwrite method requires an object and fortunately wrapper classes are objects. When we attempt to get the value of the stored property in our generic class we need to typecast. Below is how we could modify our test class to use wrappers.</p>
+<pre>
+<code>
+Class Test:
+	main():
+		create Generic object g
+		g.overwrite(new Float(23.3))
+		Float value = (Float)g.getValue()
+		print value
+</code>
+</pre>
+
+<h2>Interfaces</h2>
+<p>So when exactly do we need to use an interface? Let's take a look back at our swift algorithm for sorting a list of generics. Now that we have an idea as to what sort of objects the algorithm will take, we need to ask the following question; Can we actually compare the objects in the given list? This is where these objects must implement a compareTo method in order to be truly comparable. Wait a second? Didn't our method signature look like this?<br>
+<span class="indent">Generic [] ultimateSort(Object [])</span></p>
+<p>
+Well yes, but now we are looking at special types of objects; those which can be compared to one another of the same type. So now we must update the method signature to the following:<br>
+<span class="indent">Generic [] ultimateSort(Object [])</span>
+</p>
+
