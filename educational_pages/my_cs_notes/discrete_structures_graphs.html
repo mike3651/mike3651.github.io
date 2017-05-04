@@ -11,9 +11,42 @@
 	<li class="external"><span class="keyword">Simple directed</span>: Directed graph with no loops nor multiple edges.</li>
 	<li class="external"><span class="keyword">Directed multigraph</span>: Directed graph that contains multiple directed edges.</li>
 	<li class="external"><span class="keyword">Mixed</span>: Graph which contains directed and undirected edges.</li>
+	<li class="external"><span class="keyword">Bipartite</span>: Graph in which its edges can be separated into two sets such that \(V_1, V_2 \subset V\) and no two vertices \(v_i\in V_1, v_i\in V_2 where i >= 1\) are connected to one another.</li>
 </ul>
+
+<p><span class="keyword">Bipartitie Algorithm</span></p>
+<pre>
+<code>
+Colors a graph in such a way that the colors represent a subset
+input: graph G where g is any sort of graph
+output: colored graph if it is possible to make a bipartite
+
+makeBipartite(G)
+   colorCount is 0
+   for each Vertex v in list of vertices
+      colorCount is odd ? color is red : color is blue
+         if v is not colored
+            v->color = color
+         else if v->color is not equal to color
+            return 
+         colorCount is odd ? color is blue : color is red
+         for each neighbor of v
+            if n is not colored
+               n->color = color
+            else 
+               return
+
+</code>
+</pre>
+
+<h2>Useful definitions &amp; theorems</h2>
+<h3>Neighbors of a subset of vertices</h3>
+<p>Assuming that A is a subset of V and v is a vertex in V, we can represent the neighbors in the subset A is: <br>
+	\(N(A) = \cup_{v \in A}N(v)\)
+</p>
 
 <h2>Terminology</h2>
 <ul>
 	<li class="external"><span class="keyword">Loop</span>: A vertex which has an edge to itself.</li>
+	<li class="external"><span class="keyword">Neighbor</span>: A vertex which is connected to another unique vertex.</li>
 </ul>
