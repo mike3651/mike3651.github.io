@@ -1,0 +1,68 @@
+<h1 class="align-center">Linked lists</h1>
+<p>Lists are a very common data structure and appear everywhere in real life. We use lists to keep track of tasks to accomplish, food to get, which students are in a class, etc. One thing to note is that when we look at each one of these lists in real life we tend to look through each item one at a time in some fashion. Just like in real life, lists in programming tend to be linear and are also used to keep track of a collection of objects. Each object in the list contains a value assigned to it and a reference or two to either the object that comes before it or after it.</p>
+
+<h2>Simple operations</h2>
+
+<h3>Insertion</h3>
+<p>The insertion method of a linked list typically can be done in O(1) if we are either given a reference to the place of insertion or decided to add the node at the front or end of the list. The latter is under the assumption that we have a reference to the front of the list, the end of the list, or both. The steps for the insertion of a new data object into the list are as follows:</p>
+<ul>
+	<li class="external">We create a new node with the appropriate data</li>
+	<li class="external">After we have done this we want to make it reference the appropriate node in the list</li>
+	<li class="external">We must then set the previous node, aka the previous node of the node that our new node is pointing to, the point to our new node.</li>	
+</ul>
+<p>Below is a short implementation of the insertion method</p>
+
+<pre>
+<code>
+insert(node):
+	new node n = node
+	node->next = head
+	head = node
+</code>
+</pre>
+
+<h3>Deletion</h3>
+<p>Deletion from a list can be done in a couple of ways. For simplicities sake we're going to be under the assumption that we are given a node in a list and our object is to find the node and eliminate it from the list. If we have already implemented a method that can find the position of the previous node, of the one we are looking for, we can reduce the run time of our deletion algorithm to O(1). Our method is under the assumption that we don't know where in the list the target node is so we must search for it. The plan is as follows:</p>
+<ul>
+	<li class="external">Set our current node marker to the front of the list.</li>
+	<li class="external">Loop through the list while our current node and next node to the current node isn't null. The reason that we check for the next nodes state is because the next node is going to be the target that we are looking for, assuming that the target exists in the list.</li>
+	<li class="external">While we are still looping, if the next node to the current node is the target then we just set the currents next to be its next next. This gives us the deletion that we want.</li>
+</ul>
+<p>Below is a short implementation of the deletion method</p>
+<pre>
+<code>
+delete(node):
+	curr = head
+	while curr != null and curr->next != null
+		if curr->next is node curr->next = curr->next->next
+</code>
+</pre>
+
+<h2>Types of linked lists</h2>
+<ul>
+	<li class="external"><span class="keyword">Singly</span>: List in which each object only contains a reference to the next object.</li>
+	<li class="external"><span class="keyword">Doubly</span>: List in which object contains references to the object prior to it and the one directly after it. Typically implemented with pointers to the front and the back of the lists</li>
+	<li class="external"><span class="keyword">Circular</span>: List where the front objects previous reference refers to the last element in the list</li>
+</ul>
+
+<!-- COMMON INTERVIEW QUESTIONS FOR INTERNS -->
+<h2>Common interview questions you should know</h2>
+<p>Just as a note I will not write up any of the code, but will provide psuedocode.</p>
+<h3>Given a singly linked list, write a method that will detect a loop:</h3>
+<pre>
+<code>
+detectLoop(List l)
+	if l.head is null
+		return false
+	firstNode = l.head, secondNode = l.head.next
+	while firstNode != null &amp; secondNode != null
+		if firstNode is secondNode return true
+		firstNode = firstNode.next
+		secondNode = secondNode.next.next
+	return false
+</code>
+</pre>
+
+
+
+

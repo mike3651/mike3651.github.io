@@ -12,9 +12,41 @@
 	<li class="external"><span class="keyword">Directed multigraph</span>: Directed graph that contains multiple directed edges.</li>
 	<li class="external"><span class="keyword">Mixed</span>: Graph which contains directed and undirected edges.</li>
 	<li class="external"><span class="keyword">Bipartite</span>: Graph in which its edges can be separated into two sets such that \(V_1, V_2 \subset V\) and no two vertices \(v_i\in V_1, v_i\in V_2 where i >= 1\) are connected to one another.</li>
+   <li class="external"><span class="keyword">Complete</span>: Simple graph that where there is only one edge connecting each pair of distinct vertices</li>   
 </ul>
 
-<p><span class="keyword">Bipartitie Algorithm</span></p>
+<h2>Graphing algorithms you should know</h2>
+
+<h3>Depth First Search</h3>
+<pre>
+<code>
+DFS(startingNode)
+   create a stack of type node
+   add starting node to the stack
+   while stack is not empty
+      pop node from the stack and mark as visited
+      for each neighbor of popped node
+         if neighbor is not visited
+            add neighbor to the stack
+</code>
+</pre>
+
+<h3>Breadth First Search</h3>
+<pre>
+<code>
+BFS(startingNode)
+   create a queue of type node
+   add starting node to the queue
+   while queue is not empty
+      remove node from the stack and mark as visited
+      for each neighbor of remove node
+         if neighbor is not visited
+            add neighbor to the queue
+</code>
+</pre>
+
+
+<h3>Bipartite coloring</h3>
 <pre>
 <code>
 Colors a graph in such a way that the colors represent a subset
