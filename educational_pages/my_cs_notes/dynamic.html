@@ -1,0 +1,23 @@
+<h1 class="align-center">Dynamic programming</h1>
+
+<h2>Rod cutting</h2>
+<p></p>
+<pre>
+<code>
+input: 
+	n -> The length of the rod 
+	P[0..n] -> The prices that correspond to the lengths of the given rod
+output:
+	The maximum price that can be attained with such a length and what cutes need to be made
+Rod cutting algorithm(P[0..n])
+	S[0..n] -> an array that keeps track of cuts needed in order to maximize the price of the rod cuts
+	for i from [1:n]:
+		currMax = negative max -> current maximum value that we can attain for a certina suub length of the rod
+		for j in [1:i]:
+			if p[i] + s[i - j] > q:
+				currMax = p[j] + s[i - j]
+				s[i] = currMax
+	return s, s[n]
+
+</code>
+</pre>
