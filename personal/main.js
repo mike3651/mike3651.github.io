@@ -11,9 +11,9 @@
 		$("#learning").hover(function() {
 			toggleMessage(learning, fade_time);
 		});
-		$("#learning").mouseleave(function() {
-			toggleMessage(learning_message, original_message_fade_time);
-		});
+		// $("#learning").mouseleave(function() {
+		// 	toggleMessage(learning_message, original_message_fade_time);
+		// });
 	}
 
 	function toggleMessage(replacement, time) {
