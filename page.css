@@ -20,6 +20,19 @@ td, tr, th {
 	padding: 4px;
 }
 
+.announcements td, .announcements tr, .announcements th {
+	border: none;
+}
+
+.announcements {
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 50px;
+	background-color: white;
+	box-shadow: none;
+	text-align: left;
+}
+
 table, .project-image {
 	box-shadow: 3px 3px grey;
 }
@@ -63,7 +76,7 @@ table, .project-image {
 	width: 100px;	
 }
 
-#endeavor-updates {
+#endeavor-highlight, #endeavor-updates {
 	text-align: center;
 }
 

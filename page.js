@@ -9,7 +9,7 @@
 			var img = document.createElement("img");
 			img.src = "project_images/mathematics/derivative_" + i + ".png";
 			img.className = "endeavor-image";			
-			$("#endeavor-updates").append(img);
+			$("#endeavor-highlight").append(img);
 		}		
 	}
 })();
