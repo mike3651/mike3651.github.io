@@ -1,7 +1,7 @@
 /* Short JS file for my personal page */
 
 (function() {
-	var learning = "Keyframes, Linear nonhomogenous systems!";
+	var learning = "Graph & Probability Theory";
 	var learning_message = "What am I learning today?";
 
 	var fade_time = 3000;

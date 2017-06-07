@@ -61,8 +61,8 @@
 	function wordsFollow() {		
 		var words = $("#main-content span");
 		for(var i = 0; i < words.length; i++) {
-			moveCloser(words[i], parseInt($(words[i]).css("left")), parseInt($(words[i]).css("top"))
-				, xPos, yPos);
+			moveCloser(words[i], parseInt($(words[i]).css("left")), 
+				parseInt($(words[i]).css("top")), xPos, yPos);
 		}
 	}
 
