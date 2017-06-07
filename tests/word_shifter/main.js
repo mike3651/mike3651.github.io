@@ -5,20 +5,16 @@
 	 click_count = 0;
 
 	window.onload = function(){		
-		setUp();
-
-		$("body").keydown(function(e) {
-			if(++click_count == 1 && e.keyCode == 32) {
-				linkWords();
-				shiftWords();
-			}
-		});		
+		setUp();	
 		$("body").mousemove(function(e) {
 			xPos = e.pageX;
 			yPos = e.pageY;
 		});
 		
 		$("body").click(function() {
+			if(++click_count == 1) {
+				linkWords();
+			}
 			scatter = !scatter;
 			if(!scatter && timer == null) {
 				timer = setInterval(function() {
@@ -26,6 +22,7 @@
 				}, 10);
 				clearInterval(word_scatter_timer);
 				word_scatter_timer = null;
+				console.log("fucked up");
 			} else {
 				clearInterval(timer);
 				timer = null;
@@ -58,7 +55,7 @@
 	}
 
 	// makes the words follow the mouse
-	function wordsFollow(e) {		
+	function wordsFollow() {		
 		var words = $("#main-content span");
 		for(var i = 0; i < words.length; i++) {
 			moveCloser(words[i], parseInt($(words[i]).css("left")), parseInt($(words[i]).css("top"))
