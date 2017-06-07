@@ -12,6 +12,10 @@
 		});
 		
 		$("body").click(function() {
+			$("body").css("cursor", "grab");
+			setTimeout(function(){
+				$("body").css("cursor", "pointer");
+			}, 100)
 			if(++click_count == 1) {
 				linkWords();
 			}
