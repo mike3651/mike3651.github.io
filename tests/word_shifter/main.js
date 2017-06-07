@@ -1,6 +1,7 @@
 (function(){
 	var scatter = false, timer = null, word_scatter_timer = null,
-	 screen_height, screen_width, xPos, yPos, xVel = yVel = 1, random_locations,
+	 screen_height, screen_width, xPos, yPos, xVel = yVel = 1, TOLERANCE = 3,
+	 random_locations,
 	 click_count = 0;
 
 	window.onload = function(){		
@@ -67,17 +68,21 @@
 
 	// function that checks where to move the word with respect to the mouse
 	function moveCloser(object_to_move, word_x, word_y, mouse_x, mouse_y) {
-		if(mouse_x < word_x) {
-			$(object_to_move).css("left", word_x - xVel);
-		} else if(mouse_x > word_x) {
-			$(object_to_move).css("left", word_x + xVel);
-		}
+		if(!(word_x < mouse_x + TOLERANCE && word_x > mouse_x - TOLERANCE)) {
+			if(mouse_x < word_x) {
+				$(object_to_move).css("left", word_x - xVel);
+			} else if(mouse_x> word_x) {
+				$(object_to_move).css("left", word_x + xVel);
+			}
+		}		
 
-		if(mouse_y < word_y) {
-			$(object_to_move).css("top", word_y - yVel);
-		} else if (mouse_y > word_y){
-			$(object_to_move).css("top", word_y + yVel);
-		}
+		if(!(word_y < mouse_y + TOLERANCE && word_y > mouse_y - TOLERANCE)) {
+			if(mouse_y < word_y) {
+				$(object_to_move).css("top", word_y - yVel);
+			} else if (mouse_y > word_y){
+				$(object_to_move).css("top", word_y + yVel);
+			}
+		}		
 	}
 
 	// shifts the words to random locations
