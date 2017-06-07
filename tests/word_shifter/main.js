@@ -15,7 +15,7 @@
 			$("body").css("cursor", "grab");
 			setTimeout(function(){
 				$("body").css("cursor", "pointer");
-			}, 100)
+			}, 50)
 			if(++click_count == 1) {
 				linkWords();
 			}
@@ -26,7 +26,6 @@
 				}, 10);
 				clearInterval(word_scatter_timer);
 				word_scatter_timer = null;
-				console.log("fucked up");
 			} else {
 				clearInterval(timer);
 				timer = null;
