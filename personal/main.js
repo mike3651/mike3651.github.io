@@ -1,7 +1,7 @@
 /* Short JS file for my personal page */
 
 (function() {
-	var learning = "Graph & Probability Theory";
+	var learning = "Gradient vectors, chain rule, quotient rule, & double integration";
 	var learning_message = "What am I learning today?";
 
 	var fade_time = 3000;
