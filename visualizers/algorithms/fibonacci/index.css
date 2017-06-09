@@ -1,0 +1,15 @@
+body{
+	text-align: center;
+}
+
+body div {
+	margin: 20px;
+}
+
+#display-number{
+	font-size: 56px;
+}
+
+h2, ol {
+	text-align: left;
+}

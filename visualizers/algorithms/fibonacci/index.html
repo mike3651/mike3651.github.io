@@ -1,0 +1,37 @@
+<!-- 
+	Fibonacci visualizer
+	Michael Wilson
+-->
+<!DOCTYPE html>
+<head>
+	<!-- LINK TO JQUERY CDN -->
+	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
+	<!-- LINK TO MY STYLE SHEET -->
+	<link rel="stylesheet" type="text/css" href="index.css">
+
+	<!-- LINK TO MY JS -->
+	<script type="text/javascript" src="index.js"></script>
+	<title>Fibonacci</title>
+</head>
+<body>
+	<h1>Welcome to my fibonacci visualizer page!</h1>
+	<h2>The idea of the algorithm is as follows</h2>
+	<ol>
+		<li>Check to see if the number(n) is 1 or 2, if so return 1</li>
+		<li>Create a list and add 1 twice to the list</li>
+		<li>Repeat the following n - 2 times, since we have already dealt with the case of the first two fibonacci numbers</li>
+		<ol>
+			<li>add the previous fibonacci number and the previous of the previous fibonacci number together and then add the result to the list</li>
+		</ol>
+		<li>Return the last thing added to our list and that's your n<sup>th</sup> fibonacci number! :)</li>
+	</ol>
+	<div id="controls">
+		<input id="fibonacci-number" type="number" placeholder="enter the fibonacci number you want to see"/>
+		<button id="immediate">Find out now!</button>
+		<button id="step-by-step">Step-by-Step</button>
+	</div>
+	<div id="display-number"></div>
+	<div id="visual"></div>
+</body>
+</html>
