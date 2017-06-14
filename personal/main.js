@@ -1,8 +1,8 @@
 /* Short JS file for my personal page */
 
 (function() {
-	var learning = "Gradient vectors, knapsack algorithm, and stacks";
-	var learning_message = "What am I learning today?";
+	var learning = "Stack algorithms, neural networks, & Raspberry Pi";
+	var learning_message = "What am I learning about today?";
 
 	var fade_time = 3000;
 	var original_message_fade_time = 1500;
