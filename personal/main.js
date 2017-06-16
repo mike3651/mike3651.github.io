@@ -1,7 +1,7 @@
 /* Short JS file for my personal page */
 
 (function() {
-	var learning = "Stack algorithms, neural networks, & Raspberry Pi";
+	var learning = "Stack & queue algorithms";
 	var learning_message = "What am I learning about today?";
 
 	var fade_time = 3000;
