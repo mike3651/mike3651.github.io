@@ -1,7 +1,7 @@
 /* Short JS file for my personal page */
 
 (function() {
-	var learning = "Stack & queue algorithms";
+	var learning = "Microsoft Graph, SQL, & R";
 	var learning_message = "What am I learning about today?";
 
 	var fade_time = 3000;
