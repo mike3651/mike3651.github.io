@@ -1,0 +1,25 @@
+/* My simple styling sheet
+ * 
+ * Michael Wilson */
+
+
+.invalid {
+	background-color: #FD6500;
+}
+
+.valid {
+	background-color: lightgreen;
+}
+
+.validate {
+	position: absolute;
+}
+
+.row {
+	width: 100%;	
+}
+
+.col-2, textarea {
+	width: 48%;
+	display: inline-block;	
+}

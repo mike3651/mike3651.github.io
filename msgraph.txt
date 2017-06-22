@@ -1,0 +1,107 @@
+MICROSFT PLUGFEST
+
+
+Terminology
+REST api - representational state transfer, doesn't require the user to know the structure of the api. It's an API that supports the following HTTP calls; GET, DELETE, PUT, & POST 
+	uses less bandwith than simple object access protocol (SOAP)
+
+SOAP - messaging protocol for communication using hypertext transfer protocol (HTTP) and its extensible markup language (XML)
+
+
+cache - RAM that allows for a microprocessor to quickly access
+
+buffer - memory set aside to for data which is used for a hard disk drive (HDD)
+
+Data scientists:
+	What is R?
+		statistical software 
+		data visualization toolkit
+		programming language
+		*CRAN package system -> R is opened source so it's supported in the way that Python is
+		Single threaded language, no multithreading ):>		
+
+	Microsoft R:
+		code is the same as R, just done a little quicker
+		faster R + packages for big data analysis
+		integrated with microsoft SQL server 		
+		multithreaded
+
+		Microsoft R server: allows for dev & deploy
+		Microsoft R client: allows for dev, smaller version of R Server 
+
+	Why R?
+		great for prototyping (quick to accomplish things with small amounts of code)
+		R has a lot of support via packages
+		Great for analytics
+
+
+	Why !R?
+		scalibility and performance over large sets of data
+		concerns about integration in production
+		possible production turnarounds(having to rewrite code)
+		concerns about security 
+		concerns about data fragmentation, how does code get integrated if several people are working on the same code at the same time?
+
+	Two ways to run R in SQL server:
+		Data scientist : Start from R GUI and execute R code remotely
+			Start with R IDE and microsoft R client 
+				-- Makes various commands --> 
+			
+			SQL server 2016(hosts own version of R)
+			Data anlystics should occur where the data is stored
+				-- SQL server performs the proper analytics -->
+			
+			SQL server returns visualization, dataset, etc results back to the GUI			
+
+		Production : Start from T-SQL with embedded R script
+			Start with an application
+				-- makes a call stored procedure to SQL server -->
+			
+			SQL server processes data 
+				 -- returns results, scores, plots to the application is such a way that the application understands -->						 
+
+Office Add-in & Microsoft graph, dev 101:
+	office 365:
+			Authoring - word, excel, powerpoint
+			mail & social - outlook
+			sites & content - onedrive, sharpoint		
+		
+		Why office.js?
+			cross platform
+			signle sign in across several devices
+			centralized deployment		
+			very simple to use 
+			easy to install via excel
+
+		Developer:
+			bulk of development happens via add ins/various technologies
+			app is manifested file tells tenant/office store where the app is hosted
+				From this information a user can easily access the proper server to gain access to app
+
+		// This is done through the script lab via assistance of office.js
+		Excel.run( => {		
+			const range = # some range
+
+			// allows the highlighted region to turn blue
+			range.format.fill.color = 'blue'
+		})
+
+	Microsoft graph:
+		REST API endpoint
+			
+			// REST call that returns a JSON object
+			GET graph.microsoft.com/{version}/{resource}/{id}/{property}?{query}
+
+			webhook 
+				client logins in to office 365 page
+				office 365 gives a callback with access token
+				server posts subscription with expiration date/time to MSGraph
+				MSGraph returns validation token
+				Server gives OK
+				MSGraph returns information
+				
+
+		get the user profile
+		get content from email, calendar, files, tasks, sites, notes
+		get insights based on activities
+			used to help improve productivity for a user's day to day activities

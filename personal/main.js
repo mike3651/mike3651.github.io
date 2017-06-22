@@ -1,7 +1,8 @@
-/* Short JS file for my personal page */
+/* Short JS file for my personal page 
+ * Michael Wilson */
 
 (function() {
-	var learning = "Microsoft Graph, SQL, & R";
+	var learning = "Office.js, lambda expressions, Tensorflow";
 	var learning_message = "What am I learning about today?";
 
 	var fade_time = 3000;
