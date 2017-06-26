@@ -2,7 +2,7 @@
  * Michael Wilson */
 
 (function() {
-	var learning = "Office.js, lambda expressions, Tensorflow";
+	var learning = "Node.js";
 	var learning_message = "What am I learning about today?";
 
 	var fade_time = 3000;
