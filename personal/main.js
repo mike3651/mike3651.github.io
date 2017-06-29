@@ -2,7 +2,7 @@
  * Michael Wilson */
 
 (function() {
-	var learning = "NPM and events in Node.js";
+	var learning = "Hosting a site via Node.js and UNIX commands";
 	var learning_message = "What am I learning about today?";
 
 	var fade_time = 3000;
