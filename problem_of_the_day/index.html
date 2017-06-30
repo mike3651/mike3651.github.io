@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<head>
+	<!-- css file -->
+	<link rel="stylesheet" type="text/css" href="index.css">
+
+	<!-- JQUERY -->
+	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
+	<!-- js file -->
+	<script type="text/javascript" src="index.js"></script>
+
+	<title>Problem of the day</title>
+</head>
+<body>
+	<h1>Can you solve the problem of the day?</h1>
+
+	<!-- HIGHLIGHTED PROBLEM -->
+	<div id="highlight">
+		<h2>Second most occurring character</h2>
+
+		<!-- hidden div revealing input box for problem -->
+		<!-- <div id="problem">
+			<input type="string"/><button>Solve!</button>
+
+			<div id="output">
+			</div>
+		</div> -->
+	</div>
+
+	<!-- List of solved problems -->
+	<h2>Problem set</h2>
+	<ul>
+		<li><a href="#SMOC">Second most occurring character</a></li>
+	</ul>
+
+	<!-- Second most occurring character solved -->
+	<div id="SMOC">
+		<h3>Second most occurring character</h3>
+		<h4>The problem:</h4>
+		<p>Given a string, find the second most common character</p>
+		<h4>The thought process:</h4>
+		<ol>
+			<li>Keep track of the characters and frequencies in some sort of <span title="Data structure">DS</span></li>
+			<li>Iterate through DS to find max occuring character</li>
+			<li>Iterate through DS to find second max occuring character</li>
+			<li>Return second max occurring character</li>
+		</ol>
+
+		<h4>The psuedocode</h4>
+<pre>
+<code>
+# Finds the second most occurring character in a string
+#
+# param str: The string to search through
+# return: str !empty ? second most occurring character : null
+
+findSecond(str):  
+   hm = new hashmap&lt;char, int&gt;();
+   for each character <span title="is in">&in;</span> str:
+      if c &in; hm:
+         hm.put(c, hm.get(c)++)
+      else:
+         hm.put(c, 1)
+
+   max = compare = 0, maxKey = ''
+   for each key &in; hm:
+      compare = hm.get(key)
+      if compare > max:
+         maxKey = key
+         max = compare
+
+   secondMax = 0, returnKey = ''
+   for each key &in; hm &amp; != maxKey:
+      compare = hm.get(key)
+      if compare > secondMax:
+         secondMax = compare
+         returnKey = key
+
+   return returnKey
+</code>
+</pre>
+	</div>
+
+</body>
+</html>

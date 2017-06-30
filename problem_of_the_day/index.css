@@ -1,0 +1,43 @@
+/** 
+ * Michael Wilson
+ *
+ * My simple stylesheet */
+
+body {
+	padding: 3px;
+}
+
+h1, #highlight {
+	text-align: center;
+}
+
+ul {
+	list-style-type: none;
+}
+
+#highlight {
+	margin: auto;
+	width: 580px;	
+	border: 1px solid black;
+	border-radius: 10px;
+	box-shadow: 5px 5px 3px grey;
+}
+
+#highlight:hover {
+	cursor: pointer;
+}
+
+span {
+	color: red;
+	font-weight: bold;
+}
+
+span:hover {
+	cursor: crosshair;
+}
+
+@media screen and (max-width: 580px) {
+	#highlight {
+		width: 100%;
+	}
+}
