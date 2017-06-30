@@ -1,0 +1,20 @@
+/** 
+ * Styling for mobile platforms
+ * ©Michael Wilson */
+/* Styling for mobile platforms */
+
+@media screen and (max-width: 620px) {
+	#home {
+		padding: 0px;
+	}
+
+	#who-am-i .icon {
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+	}
+
+	#navigation li {
+		padding: 0px;
+	}
+}

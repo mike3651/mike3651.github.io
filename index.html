@@ -10,50 +10,35 @@
 <head>
 
 	<!-- LINK TO BOOTSTRAP CSS -->
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-	<!-- MY CSS STYLING SHEET -->
+	<!-- MY CSS STYLING SHEETS -->
 	<link rel="stylesheet" type="text/css" href="page.css">
+	<link rel="stylesheet" type="text/css" href="index_mobile.css">
 
 	<!-- FOR JQUERY -->
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	
 	<!-- LINK TO BOOSTRAPS JS -->
-	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!-- <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
 
 	<!-- LINK TO MY OWN JAVASCRIPT -->
 	<script type="text/javascript" src="page.js"></script>
 	<title>Michael's personal home page</title>
 </head>
 
-<!-- ADDED SCROLL SPY TO HIGHLIGHT CURRENT TARGET ON NAVBAR -->
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
-	
-	<!-- CREATE THE NAVBAR -->
-	<div id="navbar" class="navbar navbar-default navbar-fixed-top navbar-inverse">
-		<div class="container-fluid">
-			<!-- USE THIS FOR THE HAMBURGER TOGGLE -->
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">Michael Anthony Wilson</a>
-			</div>
-			<div class="collapse navbar-collapse" id="myNavbar">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#home">HOME</a></li>			
-					<li><a href="#who-am-i">ABOUT ME - Professional</a></li>					
-					<li><a href="personal/index.html">ABOUT ME - Personal</a></li>
-					</li>
-					<li><a href="#projects">PROJECTS</a></li>
-					<li><a href="#languages">LANGUAGES</a></li>
-					<li><a href="#techandtools">TECH &amp; TOOLS</a></li>
-					<li><a href="#social-media">SOCIAL MEDIA</a></li>
-				</ul>
-			</div>
-		</div>
+	<!-- my navigation bar -->
+	<div id="navigation">
+		<ul class="nav navbar-nav navbar-right">
+			<li><a href="#home">Home</a></li>			
+			<li><a href="#who-am-i">About me</a></li>										
+			<li><a href="#projects">Projects</a></li>
+			<li><a href="#languages">Languages</a></li>
+			<li><a href="#techandtools">Tech &amp; Tools</a></li>
+			<li><a href="#social-media">Social media</a></li>
+		</ul>
 	</div>
 <!-- 
 	<div id="slideshow">
@@ -111,9 +96,13 @@
 	</div>	
 
 	<!-- Resources -->
-	<ul>
-		<li><a href="problem_of_the_day/index.html">Problems of the day</a></li>
-	</ul>
+	<div id="resources">
+		<h3>Resources</h3>
+		<ul>
+			<li><a href="personal/index.html">About me - Personal</a></li>
+			<li><a href="problem_of_the_day/index.html">Problems of the day</a></li>
+		</ul>
+	</div>
 
 <!-- 
 	UPDATE BY AUGUST
@@ -127,81 +116,71 @@
 	<!-- DIV WITH INFORMATION ABOUT ME, POPULATE INFORMATION FROM A TXT FILE -->
 	<div id="who-am-i" >
 		<h2 class="text-center">Learn more about me!</h2>	
-		<div class="row">
-			<div class="col-md-1"></div>
-			<div class="col-md-5">
-				<h3 class="text-center learn">Work</h3>	
-				<table>
-					<tr>
-						<th>Image</th>
-						<th>Company</th>
-						<th>Job Title</th>
-						<th>Duration</th>
-						<th>Tasks</th>
-					</tr>
-					<tr>
-						<td><img src="work/cwk.png" class="icon"/></td>
-						<td>Coding with kids</td>
-						<td>Level II &amp; III center Instructor</td>
-						<td>March 2016 - present</td>
-						<td>
-							<ul>
-								<li>Teach kids basic fundamentals of programming</li>
-								<li>Organize lesson schedule to keep the students engaged</li>
-								<li>Help kids adapt from coding in scratch to coding in python</li>
-							</ul>
-						</td>
-					</tr>											
-					<tr>
-						<td><img src="work/uwt.png"  class="icon"/></td>
-						<td>University of Washington, Tacoma</td>
-						<td>Transfer Peer Advisor</td>
-						<td>June 2016 - present</td>
-						<td>
-							<ul>
-								<li>Schedule events on campus</li>
-								<li>Help guide students during orientaiton</li>					
-							</ul>
-						</td>
-					</tr>					
-				</table>
-			</div>
-			<div class="col-md-1"></div>
-			<div class="col-md-4">
-				<h3 class="text-center learn">Education</h3>
-				<table>
-					<tr>
-						<th>Image</th>
-						<th>Institution</th>
-						<th>Time at institution</th>
-						<th>Field of study</th>
-						<th>Degree attained</th>
-					</tr>
-					<tr>
-						<td><img src="work/uwt.png"  class="icon"/></td>
-						<td>University of Washington, Tacoma</td>
-						<td>January 2016 - present</td>
-						<td>Computer Science</td>
-						<td>Bachelors, in progress</td>
-					</tr>
-					<tr>
-						<td><img src="education/uw.png"  class="icon"/></td>
-						<td>University of Washington, Seattle</td>
-						<td>September 2014 - December 2015</td>
-						<td>BioPhysics</td>
-						<td>N/A</td>
-					</tr>
-					<tr>
-						<td><img src="education/bc.png" class="icon"></td>
-						<td>Bellevue College</td>
-						<td>January 2012 - June 2014</td>
-						<td>Mathematics</td>
-						<td>N/A</td>
-					</tr>			
-				</table>			
-			</div>
-			<div class="col-md-1"></div>
-		</div>					
+		<h3 class="text-center learn">Work</h3>	
+		<table>
+			<tr>
+				<th>Image</th>
+				<th>Company</th>
+				<th>Job Title</th>
+				<th>Duration</th>
+				<th>Tasks</th>
+			</tr>
+			<tr>
+				<td><img src="work/cwk.png" class="icon"/></td>
+				<td>Coding with kids</td>
+				<td>Level II &amp; III center Instructor</td>
+				<td>March 2016 - present</td>
+				<td>
+					<ul>
+						<li>Teach basic algorithms through Python &amp; Scratch</li>
+						<li>Continually update progress scorecards</li>					
+					</ul>
+				</td>
+			</tr>											
+			<tr>
+				<td><img src="work/uwt.png"  class="icon"/></td>
+				<td>University of Washington, Tacoma</td>
+				<td>Transfer Peer Advisor</td>
+				<td>June 2016 - June 2017</td>
+				<td>
+					<ul>
+						<li>Schedule events on campus</li>
+						<li>Help guide students during orientaiton</li>					
+					</ul>
+				</td>
+			</tr>					
+		</table>			
+		<h3 class="text-center learn">Education</h3>
+		<table>
+			<tr>
+				<th>Image</th>
+				<th>Institution</th>
+				<th>Time at institution</th>
+				<th>Field of study</th>
+				<th>Degree attained</th>
+			</tr>
+			<tr>
+				<td><img src="work/uwt.png"  class="icon"/></td>
+				<td>University of Washington, Tacoma</td>
+				<td>January 2016 - present</td>
+				<td>Computer Science</td>
+				<td>Bachelors, in progress</td>
+			</tr>
+			<tr>
+				<td><img src="education/uw.png"  class="icon"/></td>
+				<td>University of Washington, Seattle</td>
+				<td>September 2014 - December 2015</td>
+				<td>BioPhysics</td>
+				<td>N/A</td>
+			</tr>
+			<tr>
+				<td><img src="education/bc.png" class="icon"></td>
+				<td>Bellevue College</td>
+				<td>January 2012 - June 2014</td>
+				<td>Mathematics</td>
+				<td>N/A</td>
+			</tr>			
+		</table>							
 	</div>
 
 	<!-- SECTION FOR MY PROJECTS -->
@@ -345,83 +324,77 @@
 					</a>
 				</td>
 				<td>THack page</td>
-				<td>N/A</td>
+				<td>2 days</td>
 				<td>Javascript</td>
-				<td>N/A</td>
+				<td>Project was geared towards connecting people to other locals with simliar interests.</td>
 			</tr>
 		</table>
 	</div>
 
 	<div id="languages" class="container text-center">
-		<div class="row">
-			<div class="col-md-6">
-				<h2>Programming Languages</h2>
-				<br />
-				<table>
-					<tr>
-						<th>Image</th>
-						<th>Language</th>
-						<th>Time with language</th>					
-					</tr>
-					<tr>
-						<td><img src="img/java.png" class="icon"/></td>
-						<td>Java</td>
-						<td>3 years</td>
-					</tr>
-					<tr>
-						<td><img src="img/python.png" class="icon" /></td>
-						<td>Python</td>
-						<td>4 months</td>
-					</tr>
-					<tr>
-						<td><img src="img/cpp.png" class="icon"/></td>
-						<td>C++</td>
-						<td>3 months</td>
-					</tr>
-					<tr>
-						<td><img src="img/c.png" class="icon"/></td>
-						<td>C</td>
-						<td>6 months</td>
-					</tr>
-					<tr>
-						<td><img src="img/cs.png" class="icon"/></td>
-						<td>C#</td>
-						<td>3 months</td>
-					</tr>
-				</table>	
-			</div>
-			<div class="col-md-6">
-				<h2>Web Languages</h2>
-				<br />
-				<table>
-					<tr>
-						<th>Image</th>
-						<th>Language</th>
-						<th>Time with language</th>
-					</tr>
-					<tr>
-						<td><img src="img/html.png" class="icon" /></td>
-						<td>HTML</td>
-						<td>9 months</td>
-					</tr>
-					<tr>
-						<td><img src="img/css.png" class="icon"/></td>
-						<td>CSS</td>
-						<td>5 months</td>
-					</tr>
-					<tr>
-						<td><img src="img/js.png" class="icon" /></td>
-						<td>JavaScript</td>
-						<td>9 months</td>
-					</tr>
-					<tr>
-						<td><img src="img/php.png" class="icon"/></td>
-						<td>PHP</td>
-						<td>2 months</td>
-					</tr>
-				</table>	
-			</div>
-		</div>										
+		<h2>Programming Languages</h2>
+		<br />
+		<table>
+			<tr>
+				<th>Image</th>
+				<th>Language</th>
+				<th>Time with language</th>					
+			</tr>
+			<tr>
+				<td><img src="img/java.png" class="icon"/></td>
+				<td>Java</td>
+				<td>3 years</td>
+			</tr>
+			<tr>
+				<td><img src="img/python.png" class="icon" /></td>
+				<td>Python</td>
+				<td>5 months</td>
+			</tr>
+			<tr>
+				<td><img src="img/cpp.png" class="icon"/></td>
+				<td>C++</td>
+				<td>3 months</td>
+			</tr>
+			<tr>
+				<td><img src="img/c.png" class="icon"/></td>
+				<td>C</td>
+				<td>6 months</td>
+			</tr>
+			<tr>
+				<td><img src="img/cs.png" class="icon"/></td>
+				<td>C#</td>
+				<td>3 months</td>
+			</tr>
+		</table>	
+		<h2>Web Languages</h2>
+		<br />
+		<table>
+			<tr>
+				<th>Image</th>
+				<th>Language</th>
+				<th>Time with language</th>
+			</tr>
+			<tr>
+				<td><img src="img/html.png" class="icon" /></td>
+				<td>HTML</td>
+				<td>9 months</td>
+			</tr>
+			<tr>
+				<td><img src="img/css.png" class="icon"/></td>
+				<td>CSS</td>
+				<td>5 months</td>
+			</tr>
+			<tr>
+				<td><img src="img/js.png" class="icon" /></td>
+				<td>JavaScript</td>
+				<td>9 months</td>
+			</tr>
+			<tr>
+				<td><img src="img/php.png" class="icon"/></td>
+				<td>PHP</td>
+				<td>2 months</td>
+			</tr>
+		</table>									
 	</div>
 
 	<!-- TOOLS & TECHNOLOGY -->
@@ -446,14 +419,14 @@
 			<tr>
 				<td><img src="img/angular.png" class="icon"/></td>
 				<td>Angular</td>
-				<td>1 month</td>
+				<td> > 1 month</td>
 				<td>1</td>
 			</tr>
 			<tr>
 				<td><img src="img/github.png" class="icon"/></td>
 				<td>Github</td>
 				<td>1 year</td>
-				<td>20+</td>
+				<td>30+</td>
 			</tr>
 			<tr>
 				<td><img src="img/jquery.png" class="icon" /></td>
@@ -467,24 +440,30 @@
 				<td>2 months</td>
 				<td>~10</td>
 			</tr>
+			<tr>
+				<td><img src="img/node.png" class="icon" /></td>
+				<td>Node js</td>
+				<td> > 1 month</td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<td><img src="img/django.png" class="icon" /></td>
+				<td>Django</td>
+				<td> > 1 month</td>
+				<td>0</td>
+			</tr>
 		</table>
 	</div>
 
 
 	<div id="social-media" class="container text-center">
 		<h3>Find me on social media!</h3><br />
-		<div class="row">
-			<div class="col-md-6">
-				<a href="https://www.linkedin.com/in/mike365/">
-					<img src="social_media/linkedin.png" class="logo" />
-				</a>
-			</div>
-			<div class="col-md-6">
-				<a href="http://portfoli.thetatest.com/">
-					<img src="social_media/blogger.png" class="logo">
-				</a>
-			</div>
-		</div>
+		<a href="https://www.linkedin.com/in/mike365/">
+			<img src="social_media/linkedin.png" class="logo" />
+		</a>
+			<a href="https://www.github.com/mike3651/">
+			<img src="img/github.png" class="logo" />
+		</a>
 	</div>
 </body>
 </html>
