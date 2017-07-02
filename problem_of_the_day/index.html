@@ -1,3 +1,7 @@
+<!-- 
+	This is the second page which I have attempted to make in order to help my fellow peers out. Javascript will be added later.
+
+	©Michael Wilson -->
 <!DOCTYPE html>
 <head>
 	<!-- css file -->
@@ -15,8 +19,9 @@
 	<h1>Can you solve the problem of the day?</h1>
 
 	<!-- HIGHLIGHTED PROBLEM -->
+	<a id="special-highlight" href="#char-ext">
 	<div id="highlight">
-		<h2>Second most occurring character</h2>
+		<h2>Character extension</h2>
 
 		<!-- hidden div revealing input box for problem -->
 		<!-- <div id="problem">
@@ -25,16 +30,17 @@
 			<div id="output">
 			</div>
 		</div> -->
-	</div>
+	</div></a>
 
 	<!-- List of solved problems -->
 	<h2>Problem set</h2>
 	<ul>
-		<li><a href="#SMOC">Second most occurring character</a></li>
+		<li><a href="#char-ext">Character extension</a></li>
+		<li><a href="#smoc">Second most occurring character</a></li>		
 	</ul>
 
 	<!-- Second most occurring character solved -->
-	<div id="SMOC">
+	<div id="smoc">
 		<h3>Second most occurring character</h3>
 		<h4>The problem:</h4>
 		<p>Given a string, find the second most common character</p>
@@ -46,8 +52,8 @@
 			<li>Return second max occurring character</li>
 		</ol>
 
-		<h4>The psuedocode</h4>
-<pre>
+		<h4>The psuedocode</h4>	
+<pre>	
 <code>
 # Finds the second most occurring character in a string
 #
@@ -77,6 +83,43 @@ findSecond(str):
          returnKey = key
 
    return returnKey
+</code>
+</pre>		
+	</div>
+
+	<!-- character extension problem -->
+	<div id="char-ext">
+		<h3>Character extension</h3>
+		<h4>The problem:</h4>
+		<p>Given a string with a pattern of a character followed by a number, repeated M times,
+			Return a new string with each character repeated X number of times where X is the number 
+		 	which follows said character.</p>
+		<h4>The thought process:</h4>
+		<ol>
+			<li>Read through the string</li>
+			<ol>
+				<li>Mark the character to be duplicated</li>
+				<li>Mark the number of times to duplicate</li>
+				<li>Append the character duplicated times to some new string-like object</li>
+			</ol>
+			<li>Return the string-like object</li>
+		</ol>
+		<h4>The psuedocode</h4>	
+<pre>
+<code>
+# Returns a new string with each character repeated X number of times where X is the number which follows said character.
+#
+# param str: The string to go off of 
+# return: String-like object with characters repeated X times
+
+stringExt(str):
+   sb = new <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/StringBuilder.html">StringBuilder</a>
+   from i = 0 to str.length:
+      c = str[i], n = str[i + 1]
+      i+=2
+      from j = 1 to n:
+         sb.append(c)
+   return string(sb)
 </code>
 </pre>
 	</div>

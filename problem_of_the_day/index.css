@@ -1,10 +1,39 @@
 /** 
  * Michael Wilson
  *
- * My simple stylesheet */
+ * My simple stylesheet 
+ * Color scheme: monokai */
 
 body {
 	padding: 3px;
+	background-color: #272822;
+}
+
+li a, body {
+	color: #66D9EF;	
+}
+
+h1, h2, h3, h4, a:hover{
+	color: #F92672;
+}
+
+a:hover:not(code a) {	
+	font-size: 18px;
+}
+
+
+code/* code a*/ {
+	color: #A6E22E;
+}
+
+/* Styrling for anchor tags in code */
+code a {
+	font-weight: bold;
+	text-decoration: none;		
+}
+
+code a, span {
+	color: #FD971F;
 }
 
 h1, #highlight {
@@ -21,19 +50,30 @@ ul {
 	border: 1px solid black;
 	border-radius: 10px;
 	box-shadow: 5px 5px 3px grey;
+	background-color: lightgrey;
 }
 
 #highlight:hover {
 	cursor: pointer;
 }
 
+
 span {
-	color: red;
 	font-weight: bold;
 }
 
 span:hover {
 	cursor: crosshair;
+}
+
+/* Styling for the highlighted problem of the day */
+#special-highlight {
+	text-decoration: none;
+}
+
+/* Make the text inside of highlight box black */
+#special-highlight h2 {
+	color: black;
 }
 
 @media screen and (max-width: 580px) {
