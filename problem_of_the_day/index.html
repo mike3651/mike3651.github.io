@@ -20,9 +20,9 @@
 
 	<!-- HIGHLIGHTED PROBLEM -->
 	<div class="container">
-		<a id="special-highlight" href="#kth-from-last">	
+		<a id="special-highlight" href="#linkedlist-loop">	
 		<div id="highlight">
-			<h2>Given a singly linked list, find the kth from the last node</h2>
+			<h2>Detect if a loop can be found in a singly linked list</h2>
 			<div class="wrapper"></div>
 
 			<!-- hidden div revealing input box for problem -->
@@ -141,6 +141,83 @@ stringExt(str):
 
 <!-- SEGMENT FOR LINKED LISTS -->
 	<div id="linkedlists">
+		<h2>What is a linkedlist?</h2>
+		<p>A linked list is a collection of a bunch of node objects which are 'linked' together by references</p>
+
+		<h3>Exmaple linkedlist class</h3>
+<pre>
+<code>
+public class LinkedList<T> {
+   private LinkedNode<T> head, currentNode;
+   
+   /* Default constructor */
+   public LinkedList<T>(){
+      this(null);
+   }
+
+   /**
+    * Overloaded constructor
+    *
+    * @param element The data to take in */
+   public LinkedList<T>(T element) {
+      head = new LinkedNode<T>(element);
+      currentNode = head;
+   }
+
+   /**
+    * Method which gets the next element in the chain
+    *
+    * @return The next node in the list */
+   public LinkedNode<T> getNext() {
+      
+      return current = ((current == null || current.next == null) ? null : current.next);
+   }
+
+   /** 
+    * Method that sets the next node in the chain 
+    * 
+    * @param node The node to chain to */
+   public void setNext(LinkedNode<T> node) {
+      current.next = node;
+      current = current.next;
+   }
+
+   /** 
+    * Method that returns the current node 
+    *
+    * @return The current node's data */
+   public T getElement() {
+      return current.data;
+   }
+
+   /** 
+    * Sets a value in the current node
+    * 
+    * @param element The data to be set in the node */
+   public void setElement(T element) {
+      current.data = data;
+   }
+
+   /** 
+    * Class only accessible in LinkedList 
+    * Since this is a simple class the fields in here will be public */
+   private class LinkedNode<T> {
+      public T data;
+      public LinkedNode<T> next;
+
+      /**
+       * Contstructs a new linkednode
+       *
+       * @param data The data passed in */
+      public LinkedNode(T data) {
+         this.data = data;
+      }  
+   }
+}
+</code>
+</pre>
+
+
 		<h2>Linked list problems</h2>
 
 		<div id="kth-from-last">
@@ -188,7 +265,33 @@ kthFromLast(k, list):
 			<h4>The problem:</h4>
 			<p>Given a singly linked list, determine if a loop exists</p>
 			<h4>The thought process:</h4>
+			<ol>
+				<li>Create two pointers</li>
+				<li>The first pointer will take one step at a time and the other will take two at a time</li>
+				<li>If at any point the first or second pointer is null terminate loop and return false</li>
+				<li>At this point the first &amp; second pointers haven't terminated and are bound to equal one another so terminate loop and return true</li>				
+			</ol>
 			<h4>The pseudocode</h4>	
+<pre>
+<code>
+# Checks to see if there is a loop in the linked list
+#
+# param list: The list to check
+# return: True if loop is detected, False otherwise
+
+loopDetect(list):
+   if list.head or list.head.next is null:
+      return False
+   
+   first = list.head, second = first.next
+   while second is not null and first is not null:
+      if first.data is equal to second.data:
+         return True
+
+   return False
+
+</code>
+</pre>
 		</div>
 <pre>
 <code>
