@@ -168,8 +168,7 @@ public class LinkedList<T> {
     * Method which gets the next element in the chain
     *
     * @return The next node in the list */
-   public LinkedNode<T> getNext() {
-      
+   public LinkedNode<T> getNext() {      
       return current = ((current == null || current.next == null) ? null : current.next);
    }
 
