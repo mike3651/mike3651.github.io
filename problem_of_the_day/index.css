@@ -6,16 +6,22 @@
 
 body {
 	padding: 3px;
-	background-color: #272822;
+	background-color: #272822;	
 }
 
 li a, body {
 	color: #66D9EF;	
 }
 
-h1, h2, h3, h4, a:hover{
-	color: #F92672;
+code/* code a*/ {
+	color: #A6E22E;
+	/*color: white;*/
 }
+
+code a, span {
+	color: #FD971F;
+}
+
 
 h3 {
 	text-indent: 10px;
@@ -33,19 +39,10 @@ a:hover:not(code a) {
 	font-size: 18px;
 }
 
-
-code/* code a*/ {
-	color: #A6E22E;
-}
-
 /* Styrling for anchor tags in code */
 code a {
 	font-weight: bold;
 	text-decoration: none;		
-}
-
-code a, span {
-	color: #FD971F;
 }
 
 h1, #highlight {
@@ -120,6 +117,10 @@ span:hover {
 	color: black;
 }
 
+
+h1, h2, h3, h4, a:hover{
+	color: #F92672;
+}
 
 @media screen and (max-width: 580px) {
 	#highlight {
