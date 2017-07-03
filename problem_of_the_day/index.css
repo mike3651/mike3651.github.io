@@ -17,6 +17,18 @@ h1, h2, h3, h4, a:hover{
 	color: #F92672;
 }
 
+h3 {
+	text-indent: 10px;
+}
+
+h4 {
+	text-indent: 20px;
+}
+
+h4 + *, code {
+	text-indent: 40px;
+}
+
 a:hover:not(code a) {	
 	font-size: 18px;
 }
@@ -40,17 +52,49 @@ h1, #highlight {
 	text-align: center;
 }
 
-ul {
+ul, ol {
 	list-style-type: none;
 }
 
+
 #highlight {
-	margin: auto;
-	width: 580px;	
 	border: 1px solid black;
-	border-radius: 10px;
 	box-shadow: 5px 5px 3px grey;
 	background-color: lightgrey;
+	position: relative
+}
+
+#highlight, .wrapper {
+	margin: auto;
+	width: 580px;
+	border-radius: 10px;
+}
+
+/* Wrapper for highlights */
+.wrapper {
+	top:0;
+	left:0;
+	height: 100%;
+	position: absolute;	
+	/*outline: lightgrey solid 2px;
+	outline-radius: 10px;
+	-moz-outline-radius: 10px;
+	-webkit-outline-radius: 10px;*/
+	border: lightgrey solid 2px;
+}
+
+.wrapper:hover {
+	animation: pulse 3s infinite alternate;
+}
+
+/* Function for hovering over the highlight */
+@keyframes pulse {
+	0% {
+		transform:scale(1, 1);
+	}
+	100% {
+		transform:scale(1.1, 1.35);
+	}
 }
 
 #highlight:hover {
@@ -75,6 +119,7 @@ span:hover {
 #special-highlight h2 {
 	color: black;
 }
+
 
 @media screen and (max-width: 580px) {
 	#highlight {

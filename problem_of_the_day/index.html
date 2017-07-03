@@ -19,40 +19,51 @@
 	<h1>Can you solve the problem of the day?</h1>
 
 	<!-- HIGHLIGHTED PROBLEM -->
-	<a id="special-highlight" href="#char-ext">
-	<div id="highlight">
-		<h2>Character extension</h2>
+	<div class="container">
+		<a id="special-highlight" href="#linkedlist-loop">	
+		<div id="highlight">
+			<h2>Finding a loop in a singly linked list</h2>
+			<div class="wrapper"></div>
 
-		<!-- hidden div revealing input box for problem -->
-		<!-- <div id="problem">
-			<input type="string"/><button>Solve!</button>
+			<!-- hidden div revealing input box for problem -->
+			<!-- <div id="problem">
+				<input type="string"/><button>Solve!</button>
 
-			<div id="output">
-			</div>
-		</div> -->
-	</div></a>
+				<div id="output">
+				</div>
+			</div> -->
+		</div></a>
+	</div>
 
 	<!-- List of solved problems -->
 	<h2>Problem set</h2>
 	<ul>
-		<li><a href="#char-ext">Character extension</a></li>
-		<li><a href="#smoc">Second most occurring character</a></li>		
+		<li><a href="#arrays">Arrays</a></li>
+		<ul>
+			<li><a href="#char-ext">Character extension</a></li>
+			<li><a href="#smoc">Second most occurring character</a></li>	
+		</ul>
+		<li><a href="linkedlists">Linked lists</a></li>	
 	</ul>
 
-	<!-- Second most occurring character solved -->
-	<div id="smoc">
-		<h3>Second most occurring character</h3>
-		<h4>The problem:</h4>
-		<p>Given a string, find the second most common character</p>
-		<h4>The thought process:</h4>
-		<ol>
-			<li>Keep track of the characters and frequencies in some sort of <span title="Data structure">DS</span></li>
-			<li>Iterate through DS to find max occuring character</li>
-			<li>Iterate through DS to find second max occuring character</li>
-			<li>Return second max occurring character</li>
-		</ol>
 
-		<h4>The psuedocode</h4>	
+	<!-- SEGMENT FOR ARRAYS -->
+	<div id="arrays">
+		<h2>Array problems</h2>
+		<!-- Second most occurring character solved -->
+		<div id="smoc">
+			<h3>Second most occurring character</h3>
+			<h4>The problem:</h4>
+			<p>Given a string, find the second most common character</p>
+			<h4>The thought process:</h4>
+			<ol>
+				<li>Keep track of the characters and frequencies in some sort of <span title="Data structure">DS</span></li>
+				<li>Iterate through DS to find max occuring character</li>
+				<li>Iterate through DS to find second max occuring character</li>
+				<li>Return second max occurring character</li>
+			</ol>
+
+			<h4>The psuedocode</h4>	
 <pre>	
 <code>
 # Finds the second most occurring character in a string
@@ -85,26 +96,26 @@ findSecond(str):
    return returnKey
 </code>
 </pre>		
-	</div>
+		</div>
 
-	<!-- character extension problem -->
-	<div id="char-ext">
-		<h3>Character extension</h3>
-		<h4>The problem:</h4>
-		<p>Given a string with a pattern of a character followed by a number, repeated M times,
-			Return a new string with each character repeated X number of times where X is the number 
-		 	which follows said character.</p>
-		<h4>The thought process:</h4>
-		<ol>
-			<li>Read through the string</li>
+		<!-- character extension problem -->
+		<div id="char-ext">
+			<h3>Character extension</h3>
+			<h4>The problem:</h4>
+			<p>Given a string with a pattern of a character followed by a number, repeated M times,
+				Return a new string with each character repeated X number of times where X is the number 
+			 	which follows said character.</p>
+			<h4>The thought process:</h4>
 			<ol>
-				<li>Mark the character to be duplicated</li>
-				<li>Mark the number of times to duplicate</li>
-				<li>Append the character duplicated times to some new string-like object</li>
+				<li>Read through the string</li>
+				<ol>
+					<li>Mark the character to be duplicated</li>
+					<li>Mark the number of times to duplicate</li>
+					<li>Append the character duplicated times to some new string-like object</li>
+				</ol>
+				<li>Return the string-like object</li>
 			</ol>
-			<li>Return the string-like object</li>
-		</ol>
-		<h4>The psuedocode</h4>	
+			<h4>The psuedocode</h4>	
 <pre>
 <code>
 # Returns a new string with each character repeated X number of times where X is the number which follows said character.
@@ -115,11 +126,69 @@ findSecond(str):
 stringExt(str):
    sb = new <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/StringBuilder.html">StringBuilder</a>
    from i = 0 to str.length:
-      c = str[i], n = str[i + 1]
+      c = str[i], n = parseInt(str[i + 1])
       i+=2
       from j = 1 to n:
          sb.append(c)
    return string(sb)
+</code>
+</pre>
+		</div>
+	</div>
+
+<!-- SEGMENT FOR LINKED LISTS -->
+	<div id="linkedlists">
+		<h2>Linked list problems</h2>
+
+		<div id="kth-from-last">
+			<h3>Kth from last</h3>
+			<h4>The problem:</h4>
+			<p>Given a singly linked list, find the kth from the last node</p>
+			<h4>The thought process:</h4>
+			<ol>
+				<li>Create two pointers at the front of the list</li>
+				<li>Set them k steps apart from each other</li>
+				<li>Move each pointer one node at a time until the furthest node, from the front, is null</li>
+				<li>Return the non null node</li>
+			</ol>
+			<h4>The psuedocode</h4>	
+<pre>
+<code>
+# Finds the kth from the last node in a singly linked list
+#
+# param k: The index from the end
+# param list: The linked list to look through
+# return: The kth node from the end of the list
+
+kthFromLast(k, list):
+   if isEmpty(list):
+      return null
+   
+   kth, end = list.front
+   from i = 1 to k:
+      end = end.next
+   
+   if end is null:
+      return null
+
+   while end is not null:
+      kth = kth.next
+      end = end.next
+   return end
+</code>
+</pre>
+
+		</div>
+
+		<div id="linkedlist-loop">
+			<h3>Loop detection</h3>
+			<h4>The problem:</h4>
+			<p>Given a singly linked list, determine if a loop exists</p>
+			<h4>The thought process:</h4>
+			<h4>The psuedocode</h4>	
+		</div>
+<pre>
+<code>
 </code>
 </pre>
 	</div>
