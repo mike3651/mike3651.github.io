@@ -20,9 +20,9 @@
 
 	<!-- HIGHLIGHTED PROBLEM -->
 	<div class="container">
-		<a id="special-highlight" href="#linkedlist-loop">	
+		<a id="special-highlight" href="#linkedlist-palindrome">	
 		<div id="highlight">
-			<h2>Detect if a loop can be found in a singly linked list</h2>
+			<h2>Determine if a singly linked list is a palindrome</h2>
 			<div class="wrapper"></div>
 
 			<!-- hidden div revealing input box for problem -->
@@ -46,6 +46,9 @@
 		<li><a href="#linkedlists">Linked lists</a></li>	
 		<ul>
 			<li><a href="#kth-from-last">Kth from last</a></li>
+			<li><a href="#linkedlist-loop">Loop detection</a></li>
+			<li><a href="#linkedlist-palindrome">Palindrome</a></li>
+			<li><a href="#linkedlist-reverse">Reverse</a></li>
 		</ul>
 	</ul>
 
@@ -142,7 +145,28 @@ stringExt(str):
 <!-- SEGMENT FOR LINKED LISTS -->
 	<div id="linkedlists">
 		<h2>What is a linkedlist?</h2>
-		<p>A linked list is a collection of a bunch of node objects which are 'linked' together by references</p>
+		<p>A linked list is a collection of a bunch of node objects which are 'linked' together by references. Each node contains data and a reference to the next node in the chain. </p>
+<pre>
+<code>
+# Simple generic node object
+
+class LinkedNode<T> {
+   LinkedNode<T> next;
+   T data;
+
+   /**
+    * Overloaded constructor
+    *
+    * @param data The data to store in this node */
+   public LinkedNode(T data) {
+      this.data = data
+   }
+}
+
+</code>
+</pre>
+		<h4>Chain of nodes together, aka LinkedList</h4>
+		<p>|Node|--> |Node|-->  NULL</p>
 
 		<h3>Exmaple linkedlist class</h3>
 <pre>
@@ -216,7 +240,7 @@ public class LinkedList<T> {
 </code>
 </pre>
 
-
+<!-- SEGMENT FOR LINKED LISTS -->
 		<h2>Linked list problems</h2>
 
 		<div id="kth-from-last">
@@ -297,6 +321,71 @@ loopDetect(list):
 </code>
 </pre>
 	</div>
+
+	<div id="linkedlist-palindrome">
+		<h3>Palindrome</h3>
+		<h4>The problem:</h4>
+		<p>Given a singly linked list, determine if it is a palindrome</p>
+		<h4>The thought process:</h4>
+		<ol>
+			<li>Create two pointers</li>			
+			<li>Start one pointer at the original list and then the second at a reverse of the original</li>
+			<li>Loop through each list at the same time and check to see if each node is equivalent</li>
+			<li>If at any points the nodes are not equivalent return false, else return true</li>
+		</ol>
+		<h4>The pseudocode</h4>	
+<pre>
+<code>
+# Checks to see if a list is a palindrome {in place}
+#
+# param list: The list to check
+# return: True if plaindrome, false otherwise
+
+palindrome(list):
+   pointer_1 -> list
+   pointer_2 -> reverse(list)
+
+   while pointer_1 is no null:
+      if pointer_1.data is not equal to pointer_2.data:
+          return False
+   return True
+</code>
+</pre>
+	</div>
+
+	<div id="linkedlist-reverse">
+		<h3>Reverse</h3>
+		<h4>The problem:</h4>
+		<p>Given a singly linked list, reverse it</p>
+		<h4>The thought process:</h4>
+		<ol>
+			<li>Keep track of temp, current, previous nodes</li>
+			<li>Set current to be the front node and previous to be null</li>
+			<li>Loop through the list while current is not null</li>
+			<ol>
+				<li>Set temp to be current.next</li>
+				<li>Set current.next to be previous</li>
+				<li>Set previous to be equal to current</li>
+				<li>Set current to be temp</li>
+			</ol>
+		</ol>
+		<h4>The pseudocode</h4>			
+<pre>
+<code>
+# Reverses the contents of a linked list
+#
+# param list: The list to reverse
+# return: The list reversed
+reverse(list):
+   prev = null, current = list.head, temp
+   while current.next is not null:
+      temp = current.next
+      current.next = prev
+      prev = current
+      current = temp
+   return current
+</code>
+</pre>
 
 </body>
 </html>
