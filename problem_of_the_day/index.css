@@ -56,7 +56,7 @@ ul, ol {
 
 #highlight {
 	border: 1px solid black;
-	box-shadow: 5px 5px 3px grey;
+	box-shadow: 2px 2px 1px grey;
 	background-color: lightgrey;
 	position: relative
 }
@@ -73,6 +73,7 @@ ul, ol {
 	left:0;
 	height: 100%;
 	position: absolute;	
+	opacity: 0;
 	/*outline: lightgrey solid 2px;
 	outline-radius: 10px;
 	-moz-outline-radius: 10px;
@@ -81,16 +82,18 @@ ul, ol {
 }
 
 .wrapper:hover {
-	animation: pulse 3s infinite alternate;
+	animation: pulse 1s infinite;
 }
 
 /* Function for hovering over the highlight */
 @keyframes pulse {
 	0% {
 		transform:scale(1, 1);
+		opacity: 0.8;
 	}
 	100% {
 		transform:scale(1.1, 1.35);
+		opacity: 0;
 	}
 }
 
