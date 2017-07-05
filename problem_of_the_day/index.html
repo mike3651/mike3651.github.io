@@ -20,9 +20,9 @@
 
 	<!-- HIGHLIGHTED PROBLEM -->
 	<div class="container">
-		<a id="special-highlight" href="#linkedlist-palindrome">	
+		<a id="special-highlight" href="#linkedlist-intersection">	
 		<div id="highlight">
-			<h2>Determine if a singly linked list is a palindrome</h2>
+			<h2>Given two linked lists, find where they interesect</h2>
 			<div class="wrapper"></div>
 
 			<!-- hidden div revealing input box for problem -->
@@ -49,6 +49,8 @@
 			<li><a href="#linkedlist-loop">Loop detection</a></li>
 			<li><a href="#linkedlist-palindrome">Palindrome</a></li>
 			<li><a href="#linkedlist-reverse">Reverse</a></li>
+			<li><a href="#linkedlist-merge">Merge</a></li>
+			<li><a href="#linkedlist-intersection">Intersection</a></li>
 		</ul>
 	</ul>
 
@@ -320,20 +322,18 @@ loopDetect(list):
 <code>
 </code>
 </pre>
-	</div>
-
-	<div id="linkedlist-palindrome">
-		<h3>Palindrome</h3>
-		<h4>The problem:</h4>
-		<p>Given a singly linked list, determine if it is a palindrome</p>
-		<h4>The thought process:</h4>
-		<ol>
-			<li>Create two pointers</li>			
-			<li>Start one pointer at the original list and then the second at a reverse of the original</li>
-			<li>Loop through each list at the same time and check to see if each node is equivalent</li>
-			<li>If at any points the nodes are not equivalent return false, else return true</li>
-		</ol>
-		<h4>The pseudocode</h4>	
+		<div id="linkedlist-palindrome">
+			<h3>Palindrome</h3>
+			<h4>The problem:</h4>
+			<p>Given a singly linked list, determine if it is a palindrome</p>
+			<h4>The thought process:</h4>
+			<ol>
+				<li>Create two pointers</li>			
+				<li>Start one pointer at the original list and then the second at a reverse of the original</li>
+				<li>Loop through each list at the same time and check to see if each node is equivalent</li>
+				<li>If at any points the nodes are not equivalent return false, else return true</li>
+			</ol>
+			<h4>The pseudocode</h4>	
 <pre>
 <code>
 # Checks to see if a list is a palindrome {in place}
@@ -351,31 +351,32 @@ palindrome(list):
    return True
 </code>
 </pre>
-	</div>
+		</div>
 
-	<div id="linkedlist-reverse">
-		<h3>Reverse</h3>
-		<h4>The problem:</h4>
-		<p>Given a singly linked list, reverse it</p>
-		<h4>The thought process:</h4>
-		<ol>
-			<li>Keep track of temp, current, previous nodes</li>
-			<li>Set current to be the front node and previous to be null</li>
-			<li>Loop through the list while current is not null</li>
+		<div id="linkedlist-reverse">
+			<h3>Reverse</h3>
+			<h4>The problem:</h4>
+			<p>Given a singly linked list, reverse it</p>
+			<h4>The thought process:</h4>
 			<ol>
-				<li>Set temp to be current.next</li>
-				<li>Set current.next to be previous</li>
-				<li>Set previous to be equal to current</li>
-				<li>Set current to be temp</li>
+				<li>Keep track of temp, current, previous nodes</li>
+				<li>Set current to be the front node and previous to be null</li>
+				<li>Loop through the list while current is not null</li>
+				<ol>
+					<li>Set temp to be current.next</li>
+					<li>Set current.next to be previous</li>
+					<li>Set previous to be equal to current</li>
+					<li>Set current to be temp</li>
+				</ol>
 			</ol>
-		</ol>
-		<h4>The pseudocode</h4>			
+			<h4>The pseudocode</h4>			
 <pre>
 <code>
 # Reverses the contents of a linked list
 #
 # param list: The list to reverse
 # return: The list reversed
+
 reverse(list):
    prev = null, current = list.head, temp
    while current.next is not null:
@@ -385,7 +386,95 @@ reverse(list):
       current = temp
    return current
 </code>
+	</pre>
+
+		<div id="linkedlist-merge">
+			<h3>Merge</h3>
+			<h4>The problem:</h4>
+			<p>Given two ascendingly sorted singly linked lists, merge them together</p>
+			<h4>The thought process:</h4>
+			<ol>
+				<li>generate two pointers to each of the lists {for traversal} and third pointer to null</li>
+				<li>while the two traversal pointers are not null, add the smallest curr value to third pointer</li>
+				<li>Check to see which pointer is not null and then traverse to the end of its list while appending to third pointer</li>			
+			</ol>
+			<h4>The pseudocode</h4>
+<pre>
+<code>
+# Merges two ascendingly sorted linked lists togeterh 
+#
+# param p_1: The reference to the first list
+# param p_2: The reference to the second list
+# return: reference to the merged list
+
+merge(p_1, p_2):
+   p1 = p1.head, p2 = p_2.head, p3 = null
+   
+   while p1 and p2 are not null:
+      p1.data > p2.data:
+         add(p3, p2.data)
+         p2 = p2.next
+      else:
+         add(p3, p1.data)
+         p1 = p1.next
+
+   p1 is not null:
+      while p1 is not null:
+         add(p3, p1.data)
+         p1 = p1.next
+
+   else p2 is not null:
+      while p2 is not null:
+         add(p3, p2.data)
+         p2 = p2.next
+
+   return p3
+</code>
 </pre>
+		</div>
+		<div id="linkedlist-intersection">
+			<h3>Intersect</h3>
+			<h4>The problem:</h4>
+			<p>Given two singly linkedlists, find out where they intersect</p>
+			<h4>The thought process:</h4>
+			<ol>
+				<li>generate two pointers to each of the first and second list</li>
+				<li>while each pointer is not null:</li>
+				<ol>
+					<li>if the addresses are equal return current node</li>
+					<li>check to see which one has the lower address and then increment that pointer</li>
+				</ol>
+				<li>If nothing has been returned yet, return null since the lists can't intersect</li>
+			</ol>
+			<h4>The pseudocode</h4>
+<pre>
+<code>
+# Finds the intersection between two linked lists
+#
+# param list_1: reference to the first list
+# param list_2: reference to the second list
+# return: The node at which the lists intersect, none if non existent
+
+intersection(list_1, list_2):
+   p1 = list_1.head, p2 = list_2.head
+   
+   while p1 and p2 are not null:
+      if &amp;p1 is &amp;p2:
+         return p1
+      
+      if &amp;p1 is greater than &amp;p2:
+         p2 = p2.next
+      
+      else:
+         p1  = p1.next
+
+   return none
+</code>
+</pre>
+		</div>
+	</div>
+
 
 </body>
 </html>
+
