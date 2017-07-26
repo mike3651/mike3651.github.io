@@ -39,10 +39,15 @@ a:hover:not(code a) {
 	font-size: 18px;
 }
 
-/* Styrling for anchor tags in code */
-code a {
+/* Styling for anchor tags in code */
+code a, h5 > a {
+	font-style: italic;
 	font-weight: bold;
-	text-decoration: none;		
+	text-decoration: none;
+}
+
+h5 > a {
+	color: orange;
 }
 
 h1, #highlight {
@@ -123,6 +128,14 @@ span:hover {
 
 h1, h2, h3, h4, a:hover{
 	color: #F92672;
+}
+
+sub {
+	font-size: 8px;
+}
+
+h5 {
+	color: white;
 }
 
 @media screen and (max-width: 580px) {

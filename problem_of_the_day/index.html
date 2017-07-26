@@ -38,6 +38,15 @@
 	<!-- List of solved problems -->
 	<h2>Problem set</h2>
 	<ul>
+		<li><a href="#bits">Bits</a></li>
+		<ul>
+			<li><a href="#convert-to-bits">Convert to bits</a></li>
+			<li><a href="#hamming-distance">Hamming distance</a></li>
+		</ul>
+		<li><a href="#strings">Strings</a></li>
+		<ul>
+			<li><a href="#string-rotation-substring">String rotation substring</a></li>
+		</ul>
 		<li><a href="#arrays">Arrays</a></li>
 		<ul>
 			<li><a href="#char-ext">Character extension</a></li>
@@ -52,7 +61,126 @@
 			<li><a href="#linkedlist-merge">Merge</a></li>
 			<li><a href="#linkedlist-intersection">Intersection</a></li>
 		</ul>
+		<li><a href="#bst">Binary trees</a></li>
+		<ul>
+			<li><a href="#makeTree">Make Tree from sorted array</a></li>
+		</ul>
+		<li><a href="#math">Mathematics</a></li>
+		<ul>
+			<li><a href="#complex-mult">Complex multiplication</a></li>
+		</ul>
 	</ul>
+
+	<!-- SEGMENT FOR BIT PROBLEMS -->
+	<div id="bits">
+		<h2>Bit problems</h2>
+		<div id="convert-to-bits">
+			<h3>Convert to bits</h3>
+			<h4>The problem:</h4>
+			<p>Given a number, find its bit representaiton</p>
+			<h4>The thought process:</h4>
+			<ol>
+				<li>Create a number x(for positioning in array) which will be set to 1, a 32 bit sized array, and an unsigned integer</li>
+				<li>Set the unsigned int to be 1 shifted to the left 31 spaces</li>
+				<li>From i at its starting point to i > 0 and in incerements down by power of 2:</li>
+				<ol>
+					<li>bit[32 - x] = is set to the number anded with i to check if the appropriate bit is a one or zero</li>
+					<li>x is decreased</li>
+				</ol>
+				<li>return the bit array</li>
+			</ol>
+
+			<h4>The pseudocode</h4>	
+<pre>
+<code>
+# Gives a bit representation of a number
+#
+# param n: The number to get the bit representation of
+# return: An array of bits representing the number
+
+bitRepresentation(n):
+   b = bit[32], unsigned i, int x = 1
+
+   from i = 1 &lt;&lt; 32 to i > 0:
+      b[32 - x] = n &amp; i;
+      x--;
+      i /= 2;
+</code>
+</pre>		
+		<h5>Problem from <a href="https://geeksforgeeks.org">geeksforgeeks</a></h5>
+		</div>
+
+		<div id="hamming-distance">
+			<h3>Hamming distance</h3>
+			<h4>The problem:</h4>
+			<p>Given two numbers x &amp; y, find the number of positions in which the bits differ</p>
+			<h4>The thought process:</h4>
+			<ol>
+				<li>convert x &amp; y to their respective bit forms and set distance to 0</li>
+				<li>while iterating through the bits:</li>
+				<ol>
+					<li>If the x<sub>bit</sub> and y<sub>bit</sub> differ then increase distance</li>
+				</ol>	
+				<li>Return the distance</li>
+			</ol>
+
+			<h4>The pseudocode</h4>	
+<pre>
+<code>
+# Finds the hamming distance between two numbers
+#
+# param x: The first number
+# param y: The second number
+# return: The hamming distance between x &amp; y
+
+ham(x, y):
+   x_arr = bitRepresentation(x), y_arr = bitRepresentaiton(y), distance = 0
+
+   for each bit &in; x &amp; y:
+      if x<sub>bit</sub> == y<sub>bit</sub>:
+         distance++
+
+   return distance
+</code>
+</pre>
+		<h5>Problem from <a href="https://leetcode.com">leetcode</a></h5>			
+		</div>		
+
+	</div>
+
+<!-- SEGMENT FOR STRINGS -->
+	<div id="strings">
+		<div id="string-rotation-substring">
+			<h3>String rotation substring</h3>
+			<h4>The problem:</h4>
+			<p>Given two strings, find out if one of them is a rotation of the other</p>
+			<h4>The thought process:</h4>
+			<ol>
+				<li>If the lengths differ return false</li>
+				<li>Add one string to iteself and then return true if a sequence of characters in the new string is equal to the second string, otherwise return false</li>
+			</ol>
+
+			<h4>The pseudocode</h4>
+<pre>
+<code>
+# Checks to see if two strings arae rotations of one another
+#
+# param str1: The first string
+# param str2: The second string
+# return: True if one string is a rotation of the other, false otherwise
+
+substringRotation(str1, str2):
+   if len(str1) != len(str2):
+      return false
+
+   str1 += str1
+   return str1.contains(str2)
+</code>
+</pre>
+
+		<h5>Problem from <a href="https://www.facebook.com/gayle">Cracking the code interview</a></h5>			
+		</div>
+	</div>
 
 
 	<!-- SEGMENT FOR ARRAYS -->
@@ -103,7 +231,8 @@ findSecond(str):
 
    return returnKey
 </code>
-</pre>		
+</pre>
+		<h5>Problem from <a href="https://careercup.com">careercup</a></h5>		
 		</div>
 
 		<!-- character extension problem -->
@@ -141,6 +270,7 @@ stringExt(str):
    return string(sb)
 </code>
 </pre>
+		<h5>Problem from <a href="https://careercup.com">careercup</a></h5>
 		</div>
 	</div>
 
@@ -170,7 +300,7 @@ class LinkedNode<T> {
 		<h4>Chain of nodes together, aka LinkedList</h4>
 		<p>|Node|--> |Node|-->  NULL</p>
 
-		<h3>Exmaple linkedlist class</h3>
+		<h3>Example linkedlist class</h3>
 <pre>
 <code>
 public class LinkedList<T> {
@@ -282,7 +412,7 @@ kthFromLast(k, list):
    return end
 </code>
 </pre>
-
+		<h5>Problem from <a href="https://hackerrank.com">hackerrank</a></h5>
 		</div>
 
 		<div id="linkedlist-loop">
@@ -317,6 +447,7 @@ loopDetect(list):
 
 </code>
 </pre>
+		<h5>Problem from friend @ Extrahop</h5>
 		</div>
 <pre>
 <code>
@@ -352,6 +483,7 @@ palindrome(list):
    return True
 </code>
 </pre>
+		<h5>Problem from <a href="https://careercup.com">careercup</a></h5>
 		</div>
 
 		<div id="linkedlist-reverse">
@@ -389,7 +521,8 @@ reverse(list):
    
    return current
 </code>
-	</pre>
+</pre>
+		<h5>Problem from <a href="https://careercup.com">careercup</a></h5>
 
 		<div id="linkedlist-merge">
 			<h3>Merge</h3>
@@ -404,7 +537,7 @@ reverse(list):
 			<h4>The pseudocode</h4>
 <pre>
 <code>
-# Merges two ascendingly sorted linked lists togeterh 
+# Merges two ascendingly sorted linked lists togeter
 #
 # param p_1: The reference to the first list
 # param p_2: The reference to the second list
@@ -435,6 +568,7 @@ merge(p_1, p_2):
    return p3
 </code>
 </pre>
+		<h5>Problem from <a href="https://leetcode.com">leetcode</a></h5>
 		</div>
 		<div id="linkedlist-intersection">
 			<h3>Intersect</h3>
@@ -470,15 +604,89 @@ intersection(list_1, list_2):
          p2 = p2.next
       
       else:
-         p1  = p1.next
+         p1 = p1.next
 
    return none
 </code>
 </pre>
+		<h5>Problem from <a href="https://geeksforgeeks.org">geeksforgeeks</a></h5>
 		</div>
 	</div>
 
+	<!-- SEGMENT FOR BINARY TREES -->
+	<div id="bst">
+		<div id="makeTree">
+			<h3>Sorted array to BST</h3>
+			<h4>The problem:</h4>
+			<p>Given sorted list, construct a tree</p>
+			<h4>The thought process:</h4>
+			<ol>
+				<li>Find the midpoint of the array</li>
+				<li>Create a root node with the midpoints data</li>
+				<ol>
+					<li>While there are still valid positions to look at in the array</li>
+					<li>Repeat first two steps for left subtree and left half of array</li>
+					<li>Repeat first two steps for right subtree and right half of array</li>
+				</ol>
+			</ol>
+			<h4>The pseudocode</h4>
+<pre>
+<code>
+# Constructs a tree from a sorted array
+#
+# param arr: The sorted array
+# param start: The start index
+# param end: The ending index
+# param r: The root of the tree
+# return: The root of the tree
 
+makeTree(arr, start, end, r):
+   if start &lt;= end:
+      mid = (start + end)/2
+      r = new TreeNode(arr[mid])
+      r->left = makeTree(start, mid - 1)
+      r->right = makeTree(arr, mid + 1, end)
+
+</code>
+</pre>
+		<h5>Problem from <a href="https://geeksforgeeks.org">geeksforgeeks</a></h5>
+		</div>		
+	</div>
+
+<!-- SECTION FOR MATHEMATICS -->
+	<div id="math">
+		<div id="complex-mult">
+			<h3>Complex number multiplication</h3>
+			<h4>The problem:</h4>
+			<p>Given two complex equations (in the form of strings), multiply them together and return the result as a string</p>
+			<h4>The thought process:</h4>
+			<ol>
+				<li>Parse through each equation to get the real &amp; complex numbers</li>
+				<li>Perform the appropriate foiling of the respective numbers</li>
+				<li>Convert the solution to a string and return it</li>
+			</ol>
+			<h4>The pseudocode</h4>
+<pre>
+<code>
+# Performs multiplication between two complex equations
+#
+# param str1: The first complex equation
+# param str2: The second complex equation
+# return: The result of multiplying both of the equations
+
+complexMult(str1, str2):
+   a = parseInt(str1[0, '+'))
+   b = parseInt(str1('+', 'i'))
+   c = parseInt(str2[0, '+'))
+   d = parseInt(str2('+', 'i'))
+   e = a * c - b * d
+   f = (c * d + a * d) + 'i'
+   return e + f
+</code>
+</pre>
+			<h5>Problem from <a href="https://leetcode.com">leetcode</a></h5>
+		</div>
+	</div>
 </body>
 </html>
 
