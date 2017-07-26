@@ -165,6 +165,10 @@ body {
 	height: 300px;
 }
 
-table {
+table, #resources {
 	margin: auto;
+}
+
+#resources {
+	width: 50%;
 }
