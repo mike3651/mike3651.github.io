@@ -2,7 +2,7 @@
  * Michael Wilson */
 
 (function() {
-	var learning = "Hosting a site via Node.js and UNIX commands";
+	var learning = "Try/Catch/static init blocks";
 	var learning_message = "What am I learning about today?";
 
 	var fade_time = 3000;
