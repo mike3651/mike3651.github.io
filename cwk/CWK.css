@@ -110,6 +110,8 @@ ul {
 }
 
 
+
+
 /** Styling for desktops */
 @media screen and (min-width: 751px) {
 	#side-bar {
@@ -196,7 +198,7 @@ ul {
 	}
 	25% {
 		color:lightgreen;		
-		transform:scale(1.03, 1.02);
+		transform:scale(1.1, 1.1);
 	}
 	50% {
 		color:lightblue;
@@ -204,7 +206,7 @@ ul {
 	}
 	75% {
 		color:yellow;		
-		transform:scale(1.03, 1.02);
+		transform:scale(1.1, 1.1);
 	}
 	100% {
 		color:orange;		

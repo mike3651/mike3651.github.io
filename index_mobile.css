@@ -4,17 +4,88 @@
 /* Styling for mobile platforms */
 
 @media screen and (max-width: 620px) {
+	/* background scheme is simple */
+	body {
+		background-color: black;
+	}
+
+	div:nth-child(even) {
+		background-color: hotpink;
+	}
+
+	div:nth-child(odd), table {
+		background-color: lightgrey;
+	}
+
+	body, body > div{
+		margin-left:0;
+		margin-right:0;
+		margin-top: 10px;
+		margin-bottom: 10px;				
+	}
+
 	#home {
+		margin-top: 90px;
+	}
+
+
+	#home, #projects, #languages, #techandtools, #social-media {
 		padding: 0px;
+	}	
+
+	#languages > *, #techandtools > * {
+		margin:auto;
+	}
+
+	#who-am-i .icon, .project-image {
+		border-radius: 50%;
 	}
 
 	#who-am-i .icon {
 		width: 50px;
 		height: 50px;
-		border-radius: 50%;
+	}
+
+	.project-image {
+		width: 100px;
+		height: 100px;
+	}
+
+	table, td, th {		
+		background-color: white;
+	}
+
+	td, th {
+		border:none;
+	}
+
+	table,tr {
+		border: solid 1px lightgrey;
+	}
+
+	table {
+		width:100%;
+	}
+
+	fieldset {
+		border:none;
+	}
+
+	#navigation ul {
+		margin:0;
+		padding:0;
 	}
 
 	#navigation li {
-		padding: 0px;
+		padding:5px;
 	}
+
+	#navigation{
+		margin-top: 0px;
+	}
+
+	body:not(h1):not(h2):not(h3) {
+		font-family: 'Gloria Hallelujah', monospace, cursive;
+	}
+
 }
