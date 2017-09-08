@@ -88,4 +88,8 @@
 		font-family: 'Gloria Hallelujah', monospace, cursive;
 	}
 
+	h1, h2, h3 {
+		color:black;
+	}
+
 }
