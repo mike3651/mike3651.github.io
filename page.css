@@ -130,7 +130,10 @@ a > img:hover, a:hover {
 }
 
 a {
-	color:red;
+	text-decoration: none;
+	font-style: italic;
+	font-weight: bold;
+	color:orange;
 }
 
 /** ANIMATIONS */
@@ -222,19 +225,20 @@ body {
 	width: 100%;
 	height: 300px;
 }
+
+/** SPECIFIC TO LARGE SCREEN DEVICES */
 @media screen and (min-width: 621px) {
 	
 	#resources {
 		margin-bottom: 100px;
 		margin-left:auto;
 		margin-right: auto;
+		width: 50%;
+		font-size: 26px;
+		text-align: left;
 	}
 
 	table {
 		margin: auto;
-	}
-
-	#resources {
-		width: 50%;
 	}
 }
